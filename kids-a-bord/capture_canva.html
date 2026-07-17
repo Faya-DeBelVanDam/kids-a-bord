@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Capture pour canva - Kids à bord</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Open+Sans:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            background-color: white;
+            padding: 50px;
+            font-family: 'Open Sans', sans-serif;
+            color: #2c3e50;
+        }
+
+        .capture-area {
+            max-width: 950px;
+            margin: 0 auto;
+            border: 1px solid #eee;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+        }
+
+        h1 {
+            font-family: 'Quicksand', sans-serif;
+            color: #227c9d;
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #fe6d73;
+            display: inline-block;
+            padding-bottom: 10px;
+            text-transform: none;
+        }
+
+        h2 {
+            font-family: 'Quicksand', sans-serif;
+            color: #227c9d;
+            margin-top: 40px;
+            font-size: 22px;
+            text-transform: none;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th {
+            text-align: left;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-bottom: 2px solid #227c9d;
+            color: #227c9d;
+            font-size: 13px;
+            text-transform: none;
+            letter-spacing: 0.5px;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            font-size: 14px;
+            line-height: 1.4;
+            text-transform: none;
+        }
+
+        .total-row {
+            background-color: #fef9ef;
+            font-weight: bold;
+        }
+
+        .total-row td:last-child {
+            color: #fe6d73;
+            font-size: 20px;
+        }
+
+        .highlight {
+            font-weight: 700;
+            color: #227c9d;
+        }
+
+        .summary-box {
+            margin-top: 50px;
+            background: #227c9d;
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(34, 124, 157, 0.2);
+        }
+
+        .summary-box span {
+            font-size: 24px;
+            font-weight: bold;
+            display: block;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="capture-area">
+        <center>
+            <h1>Planification budgétaire du projet</h1>
+        </center>
+
+        <h2>1. Budget prévisionnel (Investissement initial)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Poste</th>
+                    <th>Détails des besoins obligatoires</th>
+                    <th>Montant (ttc)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="highlight">Développement web</td>
+                    <td>Mvp sécurisé avec système qr code et gps</td>
+                    <td>10 500 €</td>
+                </tr>
+                <tr>
+                    <td class="highlight">Juridique</td>
+                    <td>Rédaction cgu, rgpd et dépôt de marque inpi</td>
+                    <td>1 800 €</td>
+                </tr>
+                <tr>
+                    <td class="highlight">Assurance</td>
+                    <td>Responsabilité civile pour le covoiturage scolaire</td>
+                    <td>2 400 €</td>
+                </tr>
+                <tr>
+                    <td class="highlight">Création</td>
+                    <td>Frais de greffe, banque et immatriculation</td>
+                    <td>600 €</td>
+                </tr>
+                <tr>
+                    <td class="highlight">Infrastucture</td>
+                    <td>Serveurs et api google maps (estimé 1 an)</td>
+                    <td>1 200 €</td>
+                </tr>
+                <tr class="total-row">
+                    <td colspan="2">Total investissement initial</td>
+                    <td>16 500 €</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>2. Budget de communication (Lancement pilote 6 mois)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Poste</th>
+                    <th>Actions stratégiques et supports</th>
+                    <th>Montant (ttc)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="highlight">Identité</td>
+                    <td>Charte graphique complète (réalisée en interne)</td>
+                    <td>0 €</td>
+                </tr>
+                <tr>
+                    <td class="highlight">Terrain</td>
+                    <td>Flyers, affiches et supports pour les écoles</td>
+                    <td>600 €</td>
+                </tr>
+                <tr>
+                    <td class="highlight">Goodies</td>
+                    <td>Macarons voitures personnalisés ..</td>
+                    <td>1 200 €</td>
+                </tr>
+                <tr>
+                    <td class="highlight">Évènements</td>
+                    <td>Animation aux abords des écoles et forums</td>
+                    <td>400 €</td>
+                </tr>
+                <tr>
+                    <td class="highlight">Digital</td>
+                    <td>Ads facebook et instagram (montpellier)</td>
+                    <td>1 500 €</td>
+                </tr>
+                <tr>
+                    <td class="highlight">Partenaires</td>
+                    <td>Kits de communication commerçants</td>
+                    <td>300 €</td>
+                </tr>
+                <tr>
+                    <td class="highlight">Presse</td>
+                    <td>Relation presse et médias locaux</td>
+                    <td>500 €</td>
+                </tr>
+                <tr>
+                    <td class="highlight">Imprévus</td>
+                    <td>Marge de sécurité pour le lancement (fond d'urgence)</td>
+                    <td>2 500 €</td>
+                </tr>
+                <tr class="total-row">
+                    <td colspan="2">Total budget communication</td>
+                    <td>7 000 €</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="summary-box">
+            Budget total estimé pour le lancement
+            <span>23 500 €</span>
+        </div>
+    </div>
+</body>
+
+</html>

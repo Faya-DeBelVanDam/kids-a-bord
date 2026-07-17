@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Planche Marketing Premium - Kids à bord</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Nunito:wght@400;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --indigo: #227c9d;
+            --creme: #fef9ef;
+            --jaune: #ffcb77;
+            --mint: #17c3b2;
+            --corail: #fe6d73;
+        }
+
+        body {
+            background-color: var(--creme);
+            padding: 50px;
+            font-family: 'Open Sans', sans-serif;
+            color: #2c3e50;
+        }
+
+        .marketing-board {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 80px;
+            border-radius: 40px;
+            box-shadow: 0 30px 80px rgba(34, 124, 157, 0.1);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+        }
+
+        .logo-main {
+            height: 100px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-family: 'Quicksand', sans-serif;
+            color: var(--indigo);
+            font-size: 36px;
+            margin: 10px 0;
+        }
+
+        .strategy-intro {
+            font-family: 'Nunito', sans-serif;
+            color: var(--corail);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 14px;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-family: 'Quicksand', sans-serif;
+            color: var(--indigo);
+            font-size: 26px;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--jaune);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        /* Audience Grid */
+        .audience-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .audience-card {
+            padding: 40px;
+            border-radius: 30px;
+            background: #fff;
+            border: 1px solid #f0f0f0;
+            transition: 0.3s;
+        }
+
+        .audience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .audience-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        /* Visual Showcase */
+        .visual-item {
+            background: var(--creme);
+            padding: 20px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .visual-item img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid #eee;
+            margin-bottom: 15px;
+        }
+
+        .visual-caption {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+            color: var(--indigo);
+            font-size: 14px;
+            display: block;
+        }
+
+        /* Message Box */
+        .message-box {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            border-left: 5px solid var(--corail);
+            margin-top: 15px;
+            font-size: 14px;
+            font-style: italic;
+            color: #555;
+        }
+
+        /* Kit Section */
+        .kit-container {
+            background: var(--indigo);
+            color: white;
+            padding: 50px;
+            border-radius: 30px;
+            margin-top: 40px;
+        }
+
+        .kit-container h3 {
+            font-family: 'Quicksand', sans-serif;
+            color: var(--jaune);
+            margin-bottom: 30px;
+        }
+
+        .kit-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .kit-label {
+            color: var(--jaune);
+            font-weight: 700;
+            font-size: 12px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .kit-content {
+            font-family: monospace;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="marketing-board">
+        <header>
+            <img src="logo.png" alt="Logo Kids à bord" class="logo-main">
+            <div class="strategy-intro">Stratégie de Confiance & Proximité</div>
+            <h1>Planche de Communication 2026</h1>
+        </header>
+
+        <!-- Section 1: Cible Parents -->
+        <div class="section">
+            <h2>Cible : Parents (Acquisition & Confiance)</h2>
+            <div class="audience-grid">
+                <div class="audience-card">
+                    <span class="audience-badge" style="background: var(--indigo);">Support Print</span>
+                    <div class="visual-item">
+                        <img src="design_flyer.png" alt="Flyer A5">
+                        <span class="visual-caption">Flyer A5 - Le parcours "1-2-3"</span>
+                    </div>
+                    <div class="message-box">
+                        "Lever les freins par la preuve : Inscription > Validation école > Covoiturage serein."
+                    </div>
+                </div>
+                <div class="audience-card">
+                    <span class="audience-badge" style="background: var(--corail);">Réseaux Sociaux</span>
+                    <div class="visual-item">
+                        <img src="design_insta.png" alt="Post Instagram">
+                        <span class="visual-caption">Instagram - Citation Sécurité</span>
+                    </div>
+                    <div class="message-box">
+                        "La rassurance par les pairs : Savoir que l'établissement valide chaque profil."
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: Cible Partenaires -->
+        <div class="section">
+            <h2>Cible : Partenaires (Visibilité & Fidélité)</h2>
+            <div class="audience-grid">
+                <div class="audience-card">
+                    <span class="audience-badge" style="background: var(--mint);">Identité Visuelle</span>
+                    <div class="visual-item">
+                        <img src="macaron_rond_premium.png" alt="Macaron Voiture">
+                        <span class="visual-caption">Le Macaron - Symbole de la communauté</span>
+                    </div>
+                    <div class="message-box">
+                        "Créer un sentiment d'appartenance local et immédiat à Montpellier."
+                    </div>
+                </div>
+                <div class="audience-card">
+                    <span class="audience-badge" style="background: var(--jaune); color: var(--indigo);">Engagement
+                        Partenaire</span>
+                    <div class="visual-item">
+                        <img src="design_rewards.png" alt="Visuel Récompenses">
+                        <span class="visual-caption">Récompenses - Valorisation Partenaires</span>
+                    </div>
+                    <div class="message-box">
+                        "Remercier les conducteurs tout en soutenant l'économie locale."
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: Cible Institutionnels & Mairies -->
+        <div class="section">
+            <h2>Cible : Institutionnels & Mairies (Éco-mobilité)</h2>
+            <div class="audience-grid">
+                <div class="audience-card">
+                    <span class="audience-badge" style="background: #0077b5;">Réseau Professionnel</span>
+                    <div class="visual-item">
+                        <img src="linkedin_post_mockup.png" alt="Mockup Post LinkedIn"
+                            style="width: 100%; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); border: 1px solid #eee;">
+                        <span class="visual-caption">Mockup LinkedIn - Visibilité B2B</span>
+                    </div>
+                    <div class="message-box">
+                        "Fédérer les écoles, les clubs et la métropole de Montpellier autour d'un projet d'avenir."
+                    </div>
+                </div>
+                <div class="audience-card">
+                    <span class="audience-badge" style="background: var(--indigo);">Calculateur d'Impact CO₂</span>
+                    <div class="visual-item"
+                        style="background: var(--creme); padding: 30px; border-radius: 20px; text-align: left;">
+                        <h4
+                            style="font-family: 'Quicksand', sans-serif; color: var(--indigo); font-size: 18px; margin-top: 0; margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--mint)"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 3.5 1 8a8.5 8.5 0 0 1-9 10z">
+                                </path>
+                                <path d="M19 2c-2.26 4.33-5.27 7.14-8 10"></path>
+                            </svg>
+                            Compteur Intégré (Données ADEME)
+                        </h4>
+                        <p style="font-size: 13px; color: #555; line-height: 1.5; margin-bottom: 15px;">
+                            Un simulateur interactif permet d'estimer en temps réel les kilos de CO₂ économisés par
+                            trajet partagé.
+                        </p>
+                        <div
+                            style="background: white; padding: 15px; border-radius: 10px; text-align: center; border: 1px solid rgba(23, 195, 178, 0.2); font-weight: 700; color: var(--mint); font-size: 24px;">
+                            -193g CO₂ / km
+                            <div style="font-size: 11px; color: #666; font-weight: 400; margin-top: 5px;">Facteur
+                                d'émission ADEME (thermique moyenne)</div>
+                        </div>
+                    </div>
+                    <div class="message-box" style="border-left-color: var(--mint);">
+                        "Valoriser la politique d'écomobilité des mairies partenaires grâce à un bilan mensuel partagé."
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4: Le Kit de Communication -->
+        <div class="kit-container">
+            <h3>Kit de Communication "Prêt-à-l'emploi"</h3>
+            <div class="kit-item">
+                <span class="kit-label">POUR LES COACHS (WhatsApp / SMS)</span>
+                <div class="kit-content">
+                    "Bonjour les parents ! 🏀 Pour les matchs à l'extérieur ce samedi, le club met en place le
+                    covoiturage sécurisé avec Kids à bord. C'est plus simple pour l'organisation et plus rassurant pour
+                    tout le monde. Inscrivez-vous ici : [Lien]"
+                </div>
+            </div>
+            <div class="kit-item">
+                <span class="kit-label">POUR LES ÉCOLES (Email de rentrée)</span>
+                <div class="kit-content">
+                    "Chers parents, pour fluidifier le trafic devant l'école et sécuriser les trajets, nous lançons le
+                    partenariat avec Kids à bord. Une communauté fermée et validée par nos soins pour vos trajets
+                    quotidiens."
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

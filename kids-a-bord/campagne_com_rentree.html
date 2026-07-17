@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campagne Com : La Rentrée Sereine - Kids à bord</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Nunito:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --indigo: #227c9d;
+            --creme: #fef9ef;
+            --jaune: #ffcb77;
+            --vert: #17c3b2;
+            --corail: #fe6d73;
+        }
+
+        body {
+            background-color: var(--creme);
+            font-family: 'Open Sans', sans-serif;
+            color: #2c3e50;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        header h1 {
+            font-family: 'Quicksand', sans-serif;
+            color: var(--indigo);
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-family: 'Nunito', sans-serif;
+            color: var(--corail);
+            font-size: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 80px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .stat-card .label {
+            font-size: 12px;
+            color: #95a5a6;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .stat-card .value {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 24px;
+            color: var(--indigo);
+        }
+
+        .campaign-section {
+            background: white;
+            border-radius: 30px;
+            padding: 60px;
+            margin-bottom: 60px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.05);
+        }
+
+        .campaign-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 20px;
+        }
+
+        .campaign-header h2 {
+            font-family: 'Quicksand', sans-serif;
+            color: var(--indigo);
+            font-size: 32px;
+            margin: 0;
+        }
+
+        .badge {
+            background: var(--vert);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .visual-preview {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .visual-preview img {
+            width: 100%;
+            display: block;
+        }
+
+        .content-details h3 {
+            font-family: 'Nunito', sans-serif;
+            color: var(--indigo);
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .copy-box {
+            background: #f8f9fa;
+            padding: 25px;
+            border-left: 5px solid var(--corail);
+            border-radius: 0 15px 15px 0;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--indigo);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-family: 'Quicksand', sans-serif;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            background: #1a6481;
+        }
+
+        .channel-tag {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #7f8c8d;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .channel-tag i {
+            font-size: 18px;
+        }
+
+        @media (max-width: 900px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <p>Plan de Communication</p>
+            <h1>La Rentrée Sereine</h1>
+            <div style="color: #95a5a6;">15 Août — 30 Septembre</div>
+        </header>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="label">Budget Total</div>
+                <div class="value">3 500 €</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">Objectif Acquisition</div>
+                <div class="value">50 Parents</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">Objectif B2B</div>
+                <div class="value">2 Écoles</div>
+            </div>
+            <div class="stat-card" style="background: var(--corail);">
+                <div class="label" style="color: white; opacity: 0.8;">Phase</div>
+                <div class="value" style="color: white;">CRITIQUE</div>
+            </div>
+        </div>
+
+        <!-- Cible Parents Demandeurs -->
+        <section class="campaign-section">
+            <div class="campaign-header">
+                <span class="badge" style="background: var(--corail);">ACQUISITION</span>
+                <h2>Cible : Parents « Demandeurs »</h2>
+            </div>
+            <div class="grid">
+                <div class="visual-preview">
+                    <img src="/Users/mac/.gemini/antigravity/brain/8d69b607-de58-4ab2-8adb-5477d33eccf6/instagram_seekers_rentree_1778873131672.png" alt="Visual Parents Demandeurs">
+                </div>
+                <div class="content-details">
+                    <div class="channel-tag">Instagram (Carrousel)</div>
+                    <h3>"Bloqué au bureau ?"</h3>
+                    <p>L'angle émotionnel ici est la réduction du stress lié à la logistique du soir.</p>
+                    <div class="copy-box">
+                        "Bloqué au bureau ? Ne stressez plus pour la sortie d'école. Confiez le trajet à un parent de confiance validé par l'établissement."
+                    </div>
+                    <a href="#" class="cta-button">Je simplifie mon quotidien</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cible Parents Offreurs -->
+        <section class="campaign-section">
+            <div class="campaign-header">
+                <span class="badge" style="background: var(--vert);">COMMUNAUTÉ</span>
+                <h2>Cible : Parents « Offreurs »</h2>
+            </div>
+            <div class="grid">
+                <div class="content-details">
+                    <div class="channel-tag">Instagram (Post)</div>
+                    <h3>"Ne roulez plus à vide"</h3>
+                    <p>Valorisation de l'entraide et système de récompense (Points Verts).</p>
+                    <div class="copy-box">
+                        "Vous faites déjà le trajet ? Ne roulez plus à vide. Aidez une famille et gagnez des Points Verts chez votre boulanger."
+                    </div>
+                    <a href="#" class="cta-button" style="background: var(--vert);">Je propose un trajet</a>
+                </div>
+                <div class="visual-preview">
+                    <img src="/Users/mac/.gemini/antigravity/brain/8d69b607-de58-4ab2-8adb-5477d33eccf6/instagram_providers_rentree_1778873144965.png" alt="Visual Parents Offreurs">
+                </div>
+            </div>
+        </section>
+
+        <!-- Cible Institutionnelle -->
+        <section class="campaign-section">
+            <div class="campaign-header">
+                <span class="badge" style="background: var(--indigo);">B2B / INSTITUTIONNEL</span>
+                <h2>Cible : Écoles & Mairies</h2>
+            </div>
+            <div class="grid">
+                <div class="visual-preview">
+                    <img src="/Users/mac/.gemini/antigravity/brain/8d69b607-de58-4ab2-8adb-5477d33eccf6/linkedin_institutional_rentree_1778873158626.png" alt="Visual Institutionnel">
+                </div>
+                <div class="content-details">
+                    <div class="channel-tag">LinkedIn</div>
+                    <h3>"Sécurisez vos abords"</h3>
+                    <p>Focus sur la sécurité routière et la réduction de l'empreinte carbone pour l'établissement.</p>
+                    <div class="copy-box">
+                        "Sécurisez les abords de votre école et réduisez les bouchons grâce au covoiturage solidaire."
+                    </div>
+                    <a href="#" class="cta-button">Demander une présentation</a>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>

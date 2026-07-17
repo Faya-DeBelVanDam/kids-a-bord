@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids à bord - Communication Engagement & Loyalty</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Nunito:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --indigo: #227c9d;
+            --corail: #fe6d73;
+            --jaune: #ffcb77;
+            --vert: #17c3b2;
+            --creme: #fef9ef;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 60px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 80px;
+        }
+
+        .mockup-label {
+            background: #262626;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* --- INSTAGRAM --- */
+        .ig-post {
+            background: white;
+            border: 1px solid #efefef;
+            width: 100%;
+            max-width: 500px;
+            border-radius: 4px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        .ig-header {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            gap: 12px;
+        }
+
+        .ig-avatar {
+            width: 32px;
+            height: 32px;
+            background: var(--indigo);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 10px;
+            font-weight: 800;
+        }
+
+        .ig-username {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .ig-branded-content {
+            background: white;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ig-img {
+            width: 100%;
+            display: block;
+        }
+
+        .ig-cta-footer {
+            background: var(--indigo);
+            color: white;
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .ig-footer {
+            padding: 12px 16px;
+        }
+
+        .ig-icons {
+            display: flex;
+            gap: 16px;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .ig-caption {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* --- LINKEDIN --- */
+        .li-post {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
+            width: 100%;
+            max-width: 555px;
+            overflow: hidden;
+        }
+
+        .li-header {
+            padding: 12px 16px;
+            display: flex;
+            gap: 12px;
+        }
+
+        .li-avatar {
+            width: 48px;
+            height: 48px;
+            background: var(--indigo);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .li-user-info h4 {
+            margin: 0;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .li-user-info p {
+            margin: 2px 0 0;
+            font-size: 12px;
+            color: rgba(0, 0, 0, 0.6);
+        }
+
+        .li-text {
+            padding: 12px 16px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .li-branded-img {
+            position: relative;
+        }
+
+        .li-img {
+            width: 100%;
+            display: block;
+        }
+
+        .li-cta-bar {
+            background: #f8f9fa;
+            padding: 14px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #ebebeb;
+        }
+
+        .li-cta-text {
+            font-weight: 600;
+            font-size: 14px;
+            color: #444;
+        }
+
+        .li-cta-btn {
+            background: var(--indigo);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 13px;
+            text-decoration: none;
+        }
+
+        .li-footer {
+            padding: 12px;
+            display: flex;
+            justify-content: space-around;
+            color: rgba(0, 0, 0, 0.6);
+            font-weight: 600;
+            font-size: 14px;
+            border-top: 1px solid #ebebeb;
+        }
+
+        /* --- STORY --- */
+        .story-container {
+            width: 320px;
+            height: 568px;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            background: #fff;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .story-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .story-head {
+            position: absolute;
+            top: 20px;
+            left: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .story-user {
+            color: white;
+            font-size: 13px;
+            font-weight: 600;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+        }
+
+        .story-cta-active {
+            position: absolute;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 14px 28px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            white-space: nowrap;
+            border: 2px solid var(--indigo);
+        }
+
+        .story-cta-active span {
+            font-family: 'Quicksand', sans-serif;
+            color: var(--indigo);
+            font-weight: 800;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ==========================================
+         CAMPAGNE A : LA RENTRÉE SEREINE
+         ========================================== -->
+
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="mockup-label">Post Instagram - Parents Demandeurs</div>
+        <div class="ig-post">
+            <div class="ig-header">
+                <div class="ig-avatar">KB</div>
+                <div class="ig-username">kids_a_bord</div>
+                <i class="fa-solid fa-ellipsis" style="margin-left: auto;"></i>
+            </div>
+            <div class="ig-branded-content">
+                <img src="/Users/mac/.gemini/antigravity/brain/8d69b607-de58-4ab2-8adb-5477d33eccf6/real_final_seekers_web_1778875309458.png"
+                    class="ig-img">
+                <div class="ig-cta-footer">
+                    <span>REJOINDRE LA COMMUNAUTÉ</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+            </div>
+            <div class="ig-footer">
+                <div class="ig-icons">
+                    <i class="fa-regular fa-heart"></i>
+                    <i class="fa-regular fa-comment"></i>
+                    <i class="fa-regular fa-paper-plane"></i>
+                </div>
+                <div class="ig-caption">
+                    <b>kids_a_bord</b> Bloqué au bureau ? 🏢 Ne stressez plus pour la sortie d'école. Confiez le trajet
+                    à un parent de confiance validé par l'établissement. ✨ <br><br>
+                    Rendez-vous sur notre plateforme pour vous inscrire (lien en bio 🔗).
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NOUVELLE STORY POUR LA CAMPAGNE A -->
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="mockup-label">Instagram Story - Rentrée Sereine</div>
+        <div class="story-container">
+            <!-- IMAGE CONTAINER TO PREVENT BAD CROPPING -->
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;">
+                <img src="/Users/mac/.gemini/antigravity/brain/8d69b607-de58-4ab2-8adb-5477d33eccf6/story_car_vertical_1779131135432.png"
+                    style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; transform: scale(1.2);">
+            </div>
+
+            <!-- CUSTOM MODAL UI (PRÊT POUR LA RENTRÉE) -->
+            <div
+                style="position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); background: white; padding: 15px 12px; border-radius: 12px; width: 75%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.15); z-index: 20; box-sizing: border-box;">
+                <p
+                    style="margin: 0 0 6px; font-family: 'Quicksand', sans-serif; color: #227c9d; font-weight: 700; font-size: 14px;">
+                    🚗 Prêt pour la rentrée ?
+                </p>
+                <p style="margin: 0 0 16px; font-size: 10px; color: #666; font-weight: 600;">
+                    On covoiture entre parents ?
+                </p>
+                <div style="display: flex; gap: 8px; justify-content: center;">
+                    <div
+                        style="flex: 1; background: #fcf8f2; color: #227c9d; padding: 10px 0; border-radius: 6px; font-weight: 700; font-size: 10px; cursor: pointer;">
+                        Trouver un trajet
+                    </div>
+                    <div
+                        style="flex: 1; background: #fff5f5; color: #fe6d73; padding: 10px 0; border-radius: 6px; font-weight: 700; font-size: 10px; cursor: pointer;">
+                        Proposer un trajet
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         CAMPAGNE B : CHALLENGE ÉCO-QUARTIER
+         ========================================== -->
+
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="mockup-label">Instagram Story - Cible Parents Inscrits</div>
+        <div class="story-container">
+            <!-- IMAGE DE FOND ZOOMÉE -->
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; overflow: hidden;">
+                <img src="/Users/mac/.gemini/antigravity/brain/8d69b607-de58-4ab2-8adb-5477d33eccf6/eco_challenge_story_1778874958667.png"
+                    class="story-img" style="transform: scale(1.25); transform-origin: center center;">
+            </div>
+
+            <!-- STICKER SONDAGE - RÉDUIT -->
+            <div
+                style="position: absolute; top: 120px; left: 50%; transform: translateX(-50%); background: white; padding: 16px 12px; border-radius: 16px; width: 75%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.15); z-index: 20; box-sizing: border-box;">
+                <p
+                    style="margin: 0 0 10px; font-family: 'Quicksand', sans-serif; color: var(--indigo); font-weight: 700; font-size: 13px;">
+                    Match de sport ce samedi ? ⚽️</p>
+                <div style="display: flex; flex-direction: column; gap: 8px;">
+                    <div
+                        style="background: var(--vert); color: white; padding: 10px 0; border-radius: 8px; font-weight: 600; font-size: 11px; cursor: pointer;">
+                        On covoiture ! (+20 pts)</div>
+                    <div
+                        style="background: #f0f2f5; color: #555; padding: 10px 0; border-radius: 8px; font-weight: 600; font-size: 11px; cursor: pointer;">
+                        Pas cette fois</div>
+                </div>
+            </div>
+
+            <!-- POWERFUL CTA LINK - ALIGNÉ ET AJUSTÉ -->
+            <div class="story-cta-active" style="bottom: 40px; z-index: 20; padding: 12px 24px;">
+                <i class="fa-solid fa-gift" style="color: var(--indigo); font-size: 18px;"></i>
+                <span style="font-size: 14px;">JE DOUBLE MES POINTS</span>
+            </div>
+        </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="mockup-label">LinkedIn - Partenaires & Clubs</div>
+        <div class="li-post">
+            <div class="li-header">
+                <div class="li-avatar">KB</div>
+                <div class="li-user-info">
+                    <h4>Kids à bord</h4>
+                    <p>Fédérer les acteurs locaux • 1 245 abonnés<br>3 h • <i class="fa-solid fa-earth-americas"></i>
+                    </p>
+                </div>
+            </div>
+            <div class="li-text">
+                Félicitations au club de Montpellier pour avoir évité 50kg de CO2 ce mois-ci ! 🌿🏆 <br><br>
+                Une preuve concrète que le covoiturage solidaire renforce l'engagement local.
+            </div>
+            <div class="li-branded-img">
+                <img src="/Users/mac/.gemini/antigravity/brain/8d69b607-de58-4ab2-8adb-5477d33eccf6/eco_challenge_linkedin_1778874972266.png"
+                    class="li-img">
+                <div class="li-cta-bar">
+                    <span class="li-cta-text">Découvrir les résultats sur la plateforme</span>
+                    <a href="#" class="li-cta-btn">Consulter</a>
+                </div>
+            </div>
+            <div class="li-footer">
+                <div class="li-action"><i class="fa-regular fa-thumbs-up"></i> J'aime</div>
+                <div class="li-action"><i class="fa-regular fa-comment"></i> Commenter</div>
+                <div class="li-action"><i class="fa-solid fa-share-nodes"></i> Partager</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
