@@ -1,0 +1,2362 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids à bord | Covoiturer, c’est rassurer</title>
+    <meta name="description"
+        content="Solution de covoiturage scolaire sécurisée et dédiée aux activités extra-scolaires. Communautés validées par les écoles et suivi GPS en temps réel.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Open+Sans:wght@400;600&family=Quicksand:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Leaflet Map library -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <img src="logo.png" alt="Kids à bord Logo" class="main-logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#qui-sommes-nous">Qui sommes-nous</a></li>
+                <li><a href="#services">Nos services</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" class="btn-login open-onboarding">Mon compte</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <h1>Kids à bord : covoiturer, <span class="highlight">c’est rassurer.</span></h1>
+                    <p class="subtitle">La solution simple et rassurante pour les trajets de vos enfants. Entre parents
+                        d'une même école ou d'un même club, en toute confiance.</p>
+                    <div class="hero-btns">
+                        <a href="#concept" class="btn-primary">Découvrir le projet</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="hero_kids_a_bord.png" alt="Maman et son fils allant à l'école">
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="qui-sommes-nous" class="about-section">
+            <div class="container grid-2">
+                <div class="about-content">
+                    <span class="section-badge">Notre histoire</span>
+                    <h2>D'un simple sticker à une <span class="blue-text">révolution solidaire</span></h2>
+                    <p>Tout a commencé par un constat simple à Montpellier : chaque matin, des milliers de parents font
+                        le même trajet vers les mêmes écoles, avec les mêmes défis logistiques et le même stress.</p>
+                    <p>Inspirés par le célèbre sticker <strong>« Bébé à bord »</strong>, nous avons voulu transformer ce
+                        symbole de sécurité passive en une solution d'entraide active. Kids à bord est né de l'envie de
+                        redonner de la liberté aux parents tout en garantissant une sécurité absolue aux enfants.</p>
+                    <div class="about-mission">
+                        <div class="mission-item">
+                            <div class="mission-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#227c9d"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            <p><strong>Notre mission :</strong> Sécuriser chaque kilomètre entre l'école et la maison.
+                            </p>
+                        </div>
+                        <div class="mission-item">
+                            <div class="mission-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#227c9d"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.5 2 7a7 7 0 0 1-7 7h-3V20z">
+                                    </path>
+                                    <path d="M11 20H5a3 3 0 0 1-3-3V5"></path>
+                                </svg>
+                            </div>
+                            <p><strong>Notre engagement :</strong> Réduire l'empreinte carbone de nos trajets
+                                quotidiens.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="about_trust.png" alt="Confiance entre parents à Montpellier" class="rounded-img shadow">
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section container">
+            <div class="section-title centered">
+                <span class="section-badge">Le constat</span>
+                <h2>Pourquoi nous <span class="coral-text">devons agir ensemble</span></h2>
+                <p>La mobilité scolaire actuelle est un défi à la fois logistique, humain et écologique.</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3 class="stat-number" data-target="88">0</h3><span class="stat-suffix">%</span>
+                    <p>des parents accompagnent leurs enfants</p>
+                </div>
+                <div class="stat-card">
+                    <h3 class="stat-number" data-target="75">0</h3><span class="stat-suffix">%</span>
+                    <p>enchaînent dépôt scolaire et travail (3/4)</p>
+                </div>
+                <div class="stat-card">
+                    <h3 class="stat-number" data-target="33">0</h3><span class="stat-suffix">%</span>
+                    <p>des émissions de GES viennent du transport</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Concept Section -->
+        <section id="concept" class="concept bg-cream">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Un concept né pour <span class="coral-text">simplifier votre vie</span></h2>
+                    <p>Inspiré du sticker "Bébé à bord", nous recréons du lien et de la sécurité autour de l'école.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="icon-circle yellow">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#227c9d"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="1" y="3" width="22" height="13" rx="2" ry="2"></rect>
+                                <path d="M7 21h10"></path>
+                                <path d="M12 16v5"></path>
+                            </svg>
+                        </div>
+                        <h3>Covoiturage Scolaire</h3>
+                        <p>Partagez les trajets domicile-école avec d'autres parents de votre quartier.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon-circle mint">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#227c9d"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <h3>Réseau Fermé</h3>
+                        <p>Seules les familles validées par l'école ou le club peuvent rejoindre la communauté.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon-circle coral">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#227c9d"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M12 8v4"></path>
+                                <path d="M12 16h.01"></path>
+                            </svg>
+                        </div>
+                        <h3>Extra-Scolaire</h3>
+                        <p>Sport, musique, centre de loisirs : organisez aussi les mercredis après-midi.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services-section bg-white">
+            <div class="container">
+                <div class="section-title centered">
+                    <span class="section-badge">Comment ça marche ?</span>
+                    <h2>Des services adaptés à <span class="blue-text">chaque besoin</span></h2>
+                    <p>Découvrez comment Kids à bord simplifie votre quotidien, que vous soyez parent ou commerçant.</p>
+                </div>
+
+                <div class="services-grid">
+                    <!-- Service 1: Parent Passager -->
+                    <div class="service-column">
+                        <div class="service-header">
+                            <div class="service-icon-main blue-bg">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                </svg>
+                            </div>
+                            <h3>Je cherche un trajet</h3>
+                        </div>
+                        <ul class="service-steps">
+                            <li><span class="step-num">1</span>
+                                <p>Inscrivez votre enfant et faites valider son école.</p>
+                            </li>
+                            <li><span class="step-num">2</span>
+                                <p>Recherchez les parents disponibles sur votre trajet habituel.</p>
+                            </li>
+                            <li><span class="step-num">3</span>
+                                <p>Réservez et suivez le trajet en temps réel depuis l'interface sécurisée.</p>
+                            </li>
+                        </ul>
+                        <a href="#" class="btn-secondary-outline open-onboarding" data-profile="parent">Trouver un
+                            trajet</a>
+                    </div>
+
+                    <!-- Service 2: Parent Conducteur -->
+                    <div class="service-column">
+                        <div class="service-header">
+                            <div class="service-icon-main mint-bg">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-1.1 0-2 .9-2 2v7c0 1.1.9 2 2 2h10">
+                                    </path>
+                                    <circle cx="7" cy="17" r="2"></circle>
+                                    <circle cx="17" cy="17" r="2"></circle>
+                                </svg>
+                            </div>
+                            <h3>Je propose un trajet</h3>
+                        </div>
+                        <ul class="service-steps">
+                            <li><span class="step-num">1</span>
+                                <p>Publiez vos trajets quotidiens (école, sport, centre de loisirs).</p>
+                            </li>
+                            <li><span class="step-num">2</span>
+                                <p>Acceptez les demandes des parents de votre communauté.</p>
+                            </li>
+                            <li><span class="step-num">3</span>
+                                <p>Cumulez des Points Verts à chaque kilomètre partagé.</p>
+                            </li>
+                        </ul>
+                        <a href="#" class="btn-mint open-onboarding" data-profile="parent">Proposer un trajet</a>
+                    </div>
+
+                    <!-- Service 3: Partenaires -->
+                    <div class="service-column">
+                        <div class="service-header">
+                            <div class="service-icon-main coral-bg">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+                                    <path d="M3 6h18"></path>
+                                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                                </svg>
+                            </div>
+                            <h3>Je suis partenaire</h3>
+                        </div>
+                        <ul class="service-steps">
+                            <li><span class="step-num">1</span>
+                                <p>Rejoignez le réseau des commerçants "Points Verts" de Montpellier.</p>
+                            </li>
+                            <li><span class="step-num">2</span>
+                                <p>Proposez des offres exclusives aux parents engagés.</p>
+                            </li>
+                            <li><span class="step-num">3</span>
+                                <p>Gagnez en visibilité locale et soutenez une cause solidaire.</p>
+                            </li>
+                        </ul>
+                        <a href="#" class="btn-coral" onclick="showPartnerPricingSection(event)">Devenir
+                            partenaire</a>
+                    </div>
+                </div>
+
+                <!-- Section Tarifs Partenaires intégrée (Déplacée du modal) -->
+                <div id="partner-pricing-container" class="modal">
+                    <div class="modal-content" style="max-width: 950px; width: 100%;">
+                        <span class="close-modal" onclick="closePartnerPricingModal()">&times;</span>
+                        <div class="partner-pricing-header">
+                            <h3>Espace Partenaires</h3>
+                            <p>Découvrez nos solutions pour accompagner votre établissement, commerce ou association.
+                            </p>
+                        </div>
+
+                        <div class="partner-pricing-selector-grid">
+                            <div class="partner-select-card" onclick="selectPartnerTab(event, 'merchant')">
+                                <div class="select-card-icon"
+                                    style="color: var(--coral); margin-bottom: 12px; display: inline-flex; justify-content: center; align-items: center;">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                                        <line x1="3" y1="6" x2="21" y2="6" />
+                                        <path d="M16 10a4 4 0 0 1-8 0" />
+                                    </svg>
+                                </div>
+                                <h4>Commerçant</h4>
+                                <p>Valorisez votre commerce via les Points Verts</p>
+                            </div>
+                            <div class="partner-select-card" onclick="selectPartnerTab(event, 'club')">
+                                <div class="select-card-icon"
+                                    style="color: var(--coral); margin-bottom: 12px; display: inline-flex; justify-content: center; align-items: center;">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+                                        <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+                                        <path d="M4 22h16" />
+                                        <path d="M10 14.66V17c0 .55-.45 1-1 1H4v2h16v-2h-5c-.55 0-1-.45-1-1v-2.34" />
+                                        <path
+                                            d="M12 2a6 6 0 0 0-6 6v1c0 2.2 1.8 4 4 4h4c2.2 0 4-1.8 4-4V8a6 6 0 0 0-6-6z" />
+                                    </svg>
+                                </div>
+                                <h4>Club</h4>
+                                <p>Facilitez le transport pour vos adhérents</p>
+                            </div>
+                            <div class="partner-select-card" onclick="selectPartnerTab(event, 'school')">
+                                <div class="select-card-icon"
+                                    style="color: var(--coral); margin-bottom: 12px; display: inline-flex; justify-content: center; align-items: center;">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                                        <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5" />
+                                    </svg>
+                                </div>
+                                <h4>École</h4>
+                                <p>Sécurisez les abords de l'établissement</p>
+                            </div>
+                            <div class="partner-select-card" onclick="selectPartnerTab(event, 'other')">
+                                <div class="select-card-icon"
+                                    style="color: var(--coral); margin-bottom: 12px; display: inline-flex; justify-content: center; align-items: center;">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                                        <line x1="12" y1="17" x2="12.01" y2="17" />
+                                    </svg>
+                                </div>
+                                <h4>Autre</h4>
+                                <p>Collectivités et offres sur-mesure</p>
+                            </div>
+                        </div>
+
+                        <!-- Contenu Commerçant -->
+                        <div id="pricing-tab-merchant" class="partner-tab-content">
+                            <div class="pricing-grid">
+                                <div class="pricing-card">
+                                    <div>
+                                        <h3 class="pricing-card-title">Formule Éco-Quartier</h3>
+                                        <span class="pricing-card-badge badge-gray">Sans engagement</span>
+                                        <div class="pricing-price-box">
+                                            <span class="price-amount">19 €</span>
+                                            <span class="price-period">HT / mois</span>
+                                        </div>
+                                        <ul class="pricing-features-list">
+                                            <li>Présence sur la carte "Points Verts"</li>
+                                            <li>Publication d'offres spéciales pour les parents pilotes</li>
+                                            <li>Idéal pour tester le dispositif sur une courte période</li>
+                                            <li>Support client classique par email</li>
+                                        </ul>
+                                    </div>
+                                    <a href="#" class="pricing-btn btn-outline"
+                                        onclick="openPartnerAuthModal(event, 'merchant', 'register')">Essayer sans
+                                        engagement</a>
+                                </div>
+
+                                <div class="pricing-card popular">
+                                    <div class="popular-badge">Recommandé — Économisez > 30%</div>
+                                    <div>
+                                        <h3 class="pricing-card-title">Formule Boost Local</h3>
+                                        <span class="pricing-card-badge badge-corail">Visibilité prioritaire</span>
+                                        <div class="pricing-price-box">
+                                            <span class="price-amount">149 €</span>
+                                            <span class="price-period">HT / an</span>
+                                        </div>
+                                        <ul class="pricing-features-list">
+                                            <li class="highlighted">Tout ce qui est inclus dans l'Éco-Quartier</li>
+                                            <li class="highlighted">Plus de 30% d'économie sur l'année</li>
+                                            <li>Engagement de 12 mois</li>
+                                            <li>Visibilité prioritaire toute l'année</li>
+                                            <li>Badge "Commerçant Vedette" sur la carte locale</li>
+                                            <li>Kit PLV physique (vitrophanie, flyers) offert</li>
+                                            <li>Support client prioritaire sous 24h</li>
+                                        </ul>
+                                    </div>
+                                    <a href="#" class="pricing-btn btn-solid"
+                                        onclick="openPartnerAuthModal(event, 'merchant', 'register')">Choisir l'offre
+                                        Boost
+                                        Local</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contenu Club -->
+                        <div id="pricing-tab-club" class="partner-tab-content">
+                            <div class="pricing-grid">
+                                <div class="pricing-card">
+                                    <div>
+                                        <h3 class="pricing-card-title">Abonnement Club Mensuel</h3>
+                                        <span class="pricing-card-badge badge-gray">Sans engagement</span>
+                                        <div class="pricing-price-box">
+                                            <span class="price-amount">49 €</span>
+                                            <span class="price-period">HT / mois</span>
+                                        </div>
+                                        <ul class="pricing-features-list">
+                                            <li>Accès complet à la plateforme web</li>
+                                            <li>Jusqu'à 3 profils éducateurs / entraîneurs</li>
+                                            <li>Adhérents et parents illimités</li>
+                                            <li>Validation simplifiée par Code de confiance</li>
+                                            <li>Suivi des trajets d'entraînement</li>
+                                            <li>Support client classique</li>
+                                            <li>Mises à jour et maintenance incluses</li>
+                                        </ul>
+                                    </div>
+                                    <a href="#" class="pricing-btn btn-outline"
+                                        onclick="openPartnerAuthModal(event, 'club', 'register')">Essayer sans
+                                        engagement</a>
+                                </div>
+
+                                <div class="pricing-card popular">
+                                    <div class="popular-badge">Recommandé — Économisez 32%</div>
+                                    <div>
+                                        <h3 class="pricing-card-title">Abonnement Club Annuel</h3>
+                                        <span class="pricing-card-badge badge-corail">Meilleure offre</span>
+                                        <div class="pricing-price-box">
+                                            <span class="price-amount">399 €</span>
+                                            <span class="price-period">HT / an</span>
+                                        </div>
+                                        <ul class="pricing-features-list">
+                                            <li class="highlighted">Tout ce qui est inclus dans le Mensuel</li>
+                                            <li class="highlighted">Économie de 189 € sur l'année</li>
+                                            <li>Facturation unique (comptabilité simplifiée)</li>
+                                            <li>Kit de communication club offert</li>
+                                            <li>Valorisation RSE (bilan CO₂ club)</li>
+                                            <li>Support client prioritaire en 24h</li>
+                                            <li>Hébergement Cloud souverain inclus</li>
+                                        </ul>
+                                    </div>
+                                    <a href="#" class="pricing-btn btn-solid"
+                                        onclick="openPartnerAuthModal(event, 'club', 'register')">Choisir l'offre
+                                        annuelle</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contenu École -->
+                        <div id="pricing-tab-school" class="partner-tab-content">
+                            <div class="pricing-grid">
+                                <div class="pricing-card">
+                                    <div>
+                                        <h3 class="pricing-card-title">Abonnement École Mensuel</h3>
+                                        <span class="pricing-card-badge badge-gray">Sans engagement</span>
+                                        <div class="pricing-price-box">
+                                            <span class="price-amount">49 €</span>
+                                            <span class="price-period">HT / mois</span>
+                                        </div>
+                                        <ul class="pricing-features-list">
+                                            <li>Accès complet à la plateforme web</li>
+                                            <li>Jusqu'à 3 profils administrateurs (direction, vie scolaire)</li>
+                                            <li>Élèves et parents illimités</li>
+                                            <li>Validation simplifiée par Code de confiance</li>
+                                            <li>Suivi GPS et validation par QR Code</li>
+                                            <li>Support client classique</li>
+                                            <li>Mises à jour et maintenance incluses</li>
+                                        </ul>
+                                    </div>
+                                    <a href="#" class="pricing-btn btn-outline"
+                                        onclick="openPartnerAuthModal(event, 'school', 'register')">Essayer sans
+                                        engagement</a>
+                                </div>
+
+                                <div class="pricing-card popular">
+                                    <div class="popular-badge">Recommandé — Économisez 32%</div>
+                                    <div>
+                                        <h3 class="pricing-card-title">Abonnement École Annuel</h3>
+                                        <span class="pricing-card-badge badge-corail">Meilleure offre</span>
+                                        <div class="pricing-price-box">
+                                            <span class="price-amount">399 €</span>
+                                            <span class="price-period">HT / an</span>
+                                        </div>
+                                        <ul class="pricing-features-list">
+                                            <li class="highlighted">Tout ce qui est inclus dans le Mensuel</li>
+                                            <li class="highlighted">Économie de 189 € sur l'année</li>
+                                            <li>Facturation unique (comptabilité simplifiée)</li>
+                                            <li>Kit de communication physique offert</li>
+                                            <li>Rapports semestriels CO₂ ADEME pour l'établissement</li>
+                                            <li>Support client prioritaire en 24h</li>
+                                            <li>Hébergement Cloud souverain inclus</li>
+                                        </ul>
+                                    </div>
+                                    <a href="#" class="pricing-btn btn-solid"
+                                        onclick="openPartnerAuthModal(event, 'school', 'register')">Choisir l'offre
+                                        annuelle</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contenu Autre -->
+                        <div id="pricing-tab-other" class="partner-tab-content">
+                            <div class="other-partner-card"
+                                style="margin-top: 25px; text-align: center; padding: 40px 30px; background-color: var(--cream); border-radius: 24px; border: 1px solid rgba(34, 124, 157, 0.1);">
+                                <h3
+                                    style="font-family: var(--font-title, 'Quicksand', sans-serif); font-size: 24px; color: var(--main-blue); margin-bottom: 12px; font-weight: 800;">
+                                    Offre sur-mesure</h3>
+                                <p
+                                    style="font-size: 15px; color: #666; max-width: 600px; margin: 0 auto 30px auto; line-height: 1.6;">
+                                    Vous êtes une collectivité territoriale, une mairie ou une structure spécifique ?
+                                    Choisissez l'option qui vous convient pour démarrer.
+                                </p>
+                                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                                    <a href="#" class="btn-coral"
+                                        onclick="openPartnerAuthModal(event, 'other', 'register')"
+                                        style="padding: 12px 30px; font-weight: 700; border-radius: 50px;">Créer un
+                                        compte</a>
+                                    <a href="#contact" class="btn-primary"
+                                        onclick="closePartnerPricingAndContact(event, 'other')"
+                                        style="padding: 12px 30px; font-weight: 700; border-radius: 50px;">Nous
+                                        contacter</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- Ends modal-content -->
+                </div> <!-- Ends partner-pricing-container -->
+            </div>
+        </section>
+
+        <!-- Section Sécurité -->
+        <section id="security" class="security-section">
+            <div class="container grid-2">
+                <div class="security-image">
+                    <img src="security_real.png" alt="Sécurité et confiance Kids à bord" class="rounded-img shadow-lg">
+                </div>
+                <div class="security-content">
+                    <span class="section-badge">Sérénité Totale</span>
+                    <h2>La sécurité au cœur de <span class="blue-text">chaque trajet</span></h2>
+                    <p class="section-intro">Parce que la confiance ne se décrète pas, elle se construit. Chaque étape
+                        de notre service est pensée pour garantir une sérénité absolue aux familles.</p>
+
+                    <ul class="security-features">
+                        <li>
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#227c9d"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <strong>Profils vérifiés</strong>
+                                <p>Chaque parent conducteur est authentifié et validé manuellement par l'établissement
+                                    scolaire.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#227c9d"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <strong>Suivi GPS temps réel</strong>
+                                <p>Sachez exactement où se trouve votre enfant pendant tout le trajet via notre
+                                    interface sécurisée.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#227c9d"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <rect x="7" y="7" width="3" height="3"></rect>
+                                    <rect x="14" y="7" width="3" height="3"></rect>
+                                    <rect x="7" y="14" width="3" height="3"></rect>
+                                    <rect x="14" y="14" width="3" height="3"></rect>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <strong>Remise par QR Code</strong>
+                                <p>L'enfant n'est remis qu'après le scan du code, garantissant l'identité de
+                                    l'accompagnateur.</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <!-- Bloc Charte de Ponctualité (Strategic Pivot LAB #3) -->
+                    <div class="punctuality-charter-box">
+                        <div class="charter-header">
+                            <h4>La charte de ponctualité</h4>
+                        </div>
+                        <p>Pour protéger nos parents conducteurs de la fatigue logistique et éviter qu'ils
+                            n'abandonnent,
+                            Kids à bord impose une règle de <strong>5 minutes de retard maximum</strong> aux points de
+                            rendez-vous. Respecter le temps des conducteurs, c'est garantir la pérennité de notre réseau
+                            solidaire.</p>
+                        <a href="#" class="btn-text" onclick="openCharterModal(event)"
+                            style="margin-top: 12px; display: inline-block; font-weight: 700; color: var(--coral); text-decoration: underline; font-size: 14px;">Découvrir
+                            la charte</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Green Points Section -->
+        <section id="points-verts" class="green-points-section bg-mint-light">
+            <div class="container grid-2">
+                <div class="points-content">
+                    <span class="section-badge">Éco-responsabilité</span>
+                    <h2>Valorisez votre <span class="mint-text">engagement positif</span></h2>
+                    <p>Chez Kids à bord, nous pensons que chaque geste pour la planète mérite d'être célébré. En
+                        partageant vos trajets, vous ne faites pas que simplifier votre logistique : vous participez
+                        activement à réduire les émissions de CO2 à Montpellier.</p>
+                    <p>Pour chaque kilomètre partagé, vous cumulez des <strong>Points Verts</strong>. C'est notre
+                        manière de récompenser votre contribution à une ville plus respirante et plus solidaire.</p>
+
+                    <!-- Carbon Impact Calculator -->
+                    <div class="carbon-calculator">
+                        <h3>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--water-green)"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 3.5 1 8a8.5 8.5 0 0 1-9 10z">
+                                </path>
+                                <path d="M19 2c-2.26 4.33-5.27 7.14-8 10"></path>
+                            </svg>
+                            Simulateur d'Économie CO₂
+                        </h3>
+                        <p class="calc-intro">Estimez le CO₂ que vous évitez de rejeter dans l'atmosphère (données
+                            ADEME) :</p>
+
+                        <div class="calc-inputs">
+                            <div class="calc-group">
+                                <label for="calc-km">Distance aller-retour quotidienne : <span
+                                        id="calc-km-val">15</span> km</label>
+                                <input type="range" id="calc-km" min="5" max="50" step="5" value="15"
+                                    class="slider-mint">
+                            </div>
+                            <div class="calc-group">
+                                <label for="calc-days">Jours de covoiturage par semaine : <span
+                                        id="calc-days-val">4</span> jours</label>
+                                <input type="range" id="calc-days" min="1" max="5" step="1" value="4"
+                                    class="slider-mint">
+                            </div>
+                        </div>
+
+                        <div class="calc-result">
+                            <div class="result-number"><span id="co2-result">417</span> kg</div>
+                            <p class="result-label">de CO₂ économisés par an</p>
+                        </div>
+                        <p class="calc-footnote">Vos bilans CO₂ collectifs sont partagés mensuellement avec les
+                            mairies partenaires pour valoriser leur politique d'écomobilité.</p>
+                    </div>
+
+                    <div class="rewards-list">
+                        <div class="reward-card">
+                            <div class="reward-icon-small">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#17c3b2"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z">
+                                    </path>
+                                    <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                                </svg>
+                            </div>
+                            <p>Avantages exclusifs chez nos commerçants partenaires locaux.</p>
+                        </div>
+                        <div class="reward-card">
+                            <div class="reward-icon-small">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#17c3b2"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                                    <path d="M2 17l10 5 10-5"></path>
+                                    <path d="M2 12l10 5 10-5"></path>
+                                </svg>
+                            </div>
+                            <p>Accès prioritaire à des ateliers et événements communautaires.</p>
+                        </div>
+                    </div>
+                    <a href="#" class="btn-primary">Découvrir nos partenaires</a>
+                </div>
+                <div class="points-image">
+                    <img src="eco_natural.png" alt="Engagement naturel Points Verts" class="rounded-img shadow-lg">
+                </div>
+            </div>
+        </section>
+
+        <!-- Mon Compte Section -->
+        <section id="mon-compte" class="account-section bg-cream">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Espace <span class="blue-text">Mon compte</span></h2>
+                    <p>Choisissez votre profil pour accéder à votre interface personnalisée et gérer vos trajets.</p>
+                </div>
+
+                <div class="account-grid">
+                    <!-- Category: Parents -->
+                    <div class="account-card parent-card">
+                        <div class="account-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#227c9d"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <h3>Parents</h3>
+                        <p>Simplifiez vos trajets quotidiens et rejoignez la communauté de votre école.</p>
+                        <div class="account-actions">
+                            <a href="#" class="btn-primary full-width open-onboarding" data-profile="parent">Je propose
+                                un trajet</a>
+                            <a href="#" class="btn-secondary full-width open-onboarding" data-profile="parent">Je
+                                cherche un trajet</a>
+                            <a href="#" class="btn-mint full-width" onclick="openPointsVertsModal(event)">Mes points
+                                verts</a>
+                        </div>
+                    </div>
+
+                    <!-- Category: Schools -->
+                    <div class="account-card school-card">
+                        <div class="account-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#17c3b2"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Écoles & Clubs</h3>
+                        <p>Gérez les communautés de votre établissement et sécurisez les flux de transport.</p>
+                        <div class="account-actions" style="display: flex; flex-direction: column; gap: 10px;">
+                            <a href="#" class="btn-mint full-width open-onboarding" data-profile="school">Accès
+                                école</a>
+                            <a href="#" class="btn-mint-outline full-width open-onboarding" data-profile="club">Accès
+                                club</a>
+                        </div>
+                    </div>
+
+                    <!-- Category: Partners -->
+                    <div class="account-card partner-card">
+                        <div class="account-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#fe6d73"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+                                <path d="M3 6h18"></path>
+                                <path d="M16 10a4 4 0 0 1-8 0"></path>
+                            </svg>
+                        </div>
+                        <h3>Partenaires</h3>
+                        <p>Valorisez votre commerce local en proposant des récompenses "Points Verts".</p>
+                        <div class="account-actions">
+                            <a href="#" class="btn-coral full-width open-onboarding" data-profile="partner">Espace
+                                partenaires</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog" class="blog-section bg-white">
+            <div class="container">
+                <div class="section-title">
+                    <h2>L'actualité <span class="coral-text">Kids à bord</span></h2>
+                    <p>Conseils, sécurité et vie locale : retrouvez nos derniers articles pour simplifier votre
+                        quotidien de parents.</p>
+                </div>
+                <div class="blog-grid">
+                    <!-- Article 1 -->
+                    <article class="blog-card shadow">
+                        <div class="blog-img">
+                            <img src="blog_security.png" alt="Sécurité et vérification">
+                            <span class="blog-category cat-blue">Sécurité</span>
+                        </div>
+                        <div class="blog-content">
+                            <h3>Comment nous validons chaque profil parent</h3>
+                            <p>Découvrez notre processus rigoureux de vérification pour garantir des trajets 100%
+                                sereins.</p>
+                            <a href="#" class="btn-text" onclick="openBlogArticle(1); return false;">Lire l'article
+                                &rarr;</a>
+                        </div>
+                    </article>
+
+                    <!-- Article 2 -->
+                    <article class="blog-card shadow">
+                        <div class="blog-img">
+                            <img src="blog_montpellier.png" alt="Vie locale Montpellier">
+                            <span class="blog-category cat-mint">Vie Locale</span>
+                        </div>
+                        <div class="blog-content">
+                            <h3>Montpellier : le top 5 des activités extra-scolaires</h3>
+                            <p>Du sport à la musique, découvrez les meilleurs clubs partenaires de Kids à bord dans
+                                l'Hérault.</p>
+                            <a href="#" class="btn-text" onclick="openBlogArticle(2); return false;">Lire l'article
+                                &rarr;</a>
+                        </div>
+                    </article>
+
+                    <!-- Article 3 -->
+                    <article class="blog-card shadow">
+                        <div class="blog-img">
+                            <img src="blog_eco.png" alt="Écologie et covoiturage">
+                            <span class="blog-category cat-yellow">Écologie</span>
+                        </div>
+                        <div class="blog-content">
+                            <h3>Réduire son empreinte carbone au quotidien</h3>
+                            <p>Pourquoi le covoiturage scolaire est le premier geste éco-responsable des familles
+                                modernes.</p>
+                            <a href="#" class="btn-text" onclick="openBlogArticle(3); return false;">Lire l'article
+                                &rarr;</a>
+                        </div>
+                    </article>
+                </div>
+                <div class="blog-footer">
+                    <a href="#" class="btn-secondary">Voir tous les articles</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2><span class="blue-text">Contactez-nous</span></h2>
+                    <p>Une question ? Un projet de partenariat ? L'équipe Kids à bord est à votre écoute.</p>
+                </div>
+
+                <div class="contact-grid">
+                    <!-- Contact Info -->
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon-small">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#227c9d"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                    </path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>contact@kidsabord.fr</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon-small">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#227c9d"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Localisation</h4>
+                                <p>Montpellier, France</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <form class="contact-form shadow">
+                        <div class="form-group">
+                            <label for="name">Nom complet</label>
+                            <input type="text" id="name" placeholder="Votre nom" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="votre@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Sujet</label>
+                            <select id="subject">
+                                <option value="parent">Je suis un parent</option>
+                                <option value="school">Je suis une école / un club</option>
+                                <option value="partner">Je suis un partenaire</option>
+                                <option value="other">Autre demande</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" rows="5" placeholder="Comment pouvons-nous vous aider ?"
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary full-width">Envoyer mon message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Final CTA Section -->
+        <section class="final-cta-section">
+            <div class="cta-overlay"></div>
+            <div class="container cta-content">
+                <span class="cta-badge">Rejoignez l'aventure</span>
+                <h2>Ensemble, changeons la <span class="yellow-text">route de l'école</span></h2>
+                <p>Kids à bord, un service simple et sécurisé pour trouver la solution qui vous correspond !</p>
+                <div class="cta-btns">
+                    <a href="#" class="btn-primary open-onboarding" data-profile="parent">Devenir parent pilote</a>
+                    <a href="#" class="btn-white open-onboarding" data-profile="school">Inscrire mon établissement</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Nous retrouver / Localisation -->
+        <section id="nous-retrouver" class="nous-retrouver-section"
+            style="padding: 100px 0; background-color: var(--white);">
+            <div class="container">
+                <div class="section-header" style="text-align: center; margin-bottom: 50px;">
+                    <span class="badge"
+                        style="background-color: rgba(23, 195, 178, 0.1); color: var(--water-green); padding: 6px 16px; border-radius: 50px; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Où
+                        nous trouver ?</span>
+                    <h2
+                        style="font-family: var(--font-title); color: var(--main-blue); font-size: 36px; font-weight: 800; margin-top: 15px;">
+                        Nous retrouver</h2>
+                </div>
+
+                <div
+                    style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; max-width: 1100px; margin: 0 auto; padding: 0 20px;">
+
+                    <!-- Left: Socials & Address -->
+                    <div
+                        style="background-color: var(--cream); padding: 40px; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.02); height: 100%; display: flex; flex-direction: column; justify-content: center; text-align: left;">
+                        <h3
+                            style="font-family: var(--font-title); color: var(--main-blue); font-size: 24px; font-weight: 800; margin-bottom: 20px;">
+                            Restons connectés !</h3>
+                        <p style="color: #555; line-height: 1.6; margin-bottom: 30px;">Rejoignez notre communauté sur
+                            les réseaux sociaux pour suivre le développement du covoiturage solidaire et les nouveautés.
+                        </p>
+
+                        <!-- Social Icons -->
+                        <div style="display: flex; gap: 20px; margin-bottom: 40px;">
+                            <a href="https://www.linkedin.com" target="_blank" class="social-btn linkedin-btn"
+                                aria-label="LinkedIn"
+                                style="width: 60px; height: 60px; background-color: var(--white); border-radius: 50px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(0,0,0,0.05); transition: all 0.3s ease; color: #0077b5;">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                </svg>
+                            </a>
+                            <a href="https://www.instagram.com" target="_blank" class="social-btn instagram-btn"
+                                aria-label="Instagram"
+                                style="width: 60px; height: 60px; background-color: var(--white); border-radius: 50px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(0,0,0,0.05); transition: all 0.3s ease; color: #e1306c;">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                                </svg>
+                            </a>
+                        </div>
+
+                        <!-- Contact Details -->
+                        <div
+                            style="display: flex; flex-direction: column; gap: 15px; border-top: 1px solid rgba(0,0,0,0.06); padding-top: 30px;">
+                            <div style="display: flex; align-items: center; gap: 15px;">
+                                <div
+                                    style="width: 40px; height: 40px; background-color: rgba(34, 124, 157, 0.05); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--main-blue);">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <span
+                                        style="font-size: 11px; text-transform: uppercase; color: #888; font-weight: 700; display: block;">Siège
+                                        Social</span>
+                                    <strong style="color: var(--main-blue); font-size: 14px;">Montpellier,
+                                        France</strong>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 15px;">
+                                <div
+                                    style="width: 40px; height: 40px; background-color: rgba(23, 195, 178, 0.05); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--water-green);">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                        </path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <span
+                                        style="font-size: 11px; text-transform: uppercase; color: #888; font-weight: 700; display: block;">Email</span>
+                                    <strong
+                                        style="color: var(--main-blue); font-size: 14px;">contact@kidsabord.fr</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Interactive Leaflet Map -->
+                    <div id="map-leaflet"
+                        style="width: 100%; height: 450px; border-radius: 24px; border: 1px solid rgba(0,0,0,0.08); box-shadow: 0 10px 30px rgba(0,0,0,0.02); z-index: 1;">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-info">
+                <div class="logo">
+                    <img src="logo.png" alt="Kids à bord Logo" class="footer-logo">
+                </div>
+                <p>Covoiturer, c'est rassurer.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Projet</h4>
+                <ul>
+                    <li><a href="#qui-sommes-nous">À propos</a></li>
+                    <li><a href="#concept">Le concept</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Légal</h4>
+                <ul>
+                    <li><a href="#">Confidentialité (RGPD)</a></li>
+                    <li><a href="#">CGU</a></li>
+                    <li><a href="#">Mentions légales</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p>Montpellier, France</p>
+                <p>contact@kidsabord.fr</p>
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            <p>&copy; 2026 Kids à bord. Réalisé pour les familles.</p>
+        </div>
+    </footer>
+
+    <!-- Modal d'Inscription Simplifiée (Onboarding inversé LAB #3) -->
+    <!-- Modal d'Inscription et Connexion Classique (Portail Unified) -->
+    <div id="onboarding-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+
+            <!-- Étape 1 : Choix du profil (Pour le bouton "Mon compte" global) -->
+            <div id="modal-step-choice">
+                <h3>Espace Mon compte</h3>
+                <p class="modal-subtitle">Sélectionnez votre profil pour accéder à votre interface personnalisée.</p>
+                <div class="modal-choices">
+                    <div class="choice-card" onclick="selectProfile('parent')">
+                        <h4>Parents d'élèves</h4>
+                        <p>Covoiturez pour l'école ou le sport</p>
+                    </div>
+                    <div class="choice-card" onclick="selectProfile('school_club')">
+                        <h4>Écoles &amp; Clubs</h4>
+                        <p>Gérez les communautés de votre établissement et sécurisez les flux de transport.</p>
+                    </div>
+                    <div class="choice-card" onclick="selectProfile('partner')">
+                        <h4>Partenaires</h4>
+                        <p>Espace commerçants et autres structures partenaires</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Étape Sélection Écoles & Clubs -->
+            <div id="modal-step-school-club-auth-selector" style="display: none;">
+                <h3>Écoles &amp; Clubs</h3>
+                <p class="modal-subtitle">Sélectionnez votre catégorie pour vous connecter ou vous inscrire.</p>
+                <div class="modal-choices">
+                    <div class="choice-card" onclick="selectPartnerTypeForAuth(event, 'school')">
+                        <div class="choice-icon"
+                            style="color: var(--coral); margin-bottom: 15px; display: inline-flex; justify-content: center; align-items: center;">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                                <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5" />
+                            </svg>
+                        </div>
+                        <h4>Accès école</h4>
+                        <p>Établissement scolaire</p>
+                    </div>
+                    <div class="choice-card" onclick="selectPartnerTypeForAuth(event, 'club')">
+                        <div class="choice-icon"
+                            style="color: var(--coral); margin-bottom: 15px; display: inline-flex; justify-content: center; align-items: center;">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+                                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+                                <path d="M4 22h16" />
+                                <path d="M10 14.66V17c0 .55-.45 1-1 1H4v2h16v-2h-5c-.55 0-1-.45-1-1v-2.34" />
+                                <path d="M12 2a6 6 0 0 0-6 6v1c0 2.2 1.8 4 4 4h4c2.2 0 4-1.8 4-4V8a6 6 0 0 0-6-6z" />
+                            </svg>
+                        </div>
+                        <h4>Accès club</h4>
+                        <p>Club de sport / loisirs</p>
+                    </div>
+                </div>
+                <button type="button" class="btn-back" onclick="goBackToChoice()">← Retour</button>
+            </div>
+
+            <!-- Étape Sélection Partenaire (Commerçants & Autres) -->
+            <div id="modal-step-partner-auth-selector" style="display: none;">
+                <h3>Espace Partenaires</h3>
+                <p class="modal-subtitle">Sélectionnez votre catégorie pour vous connecter ou vous inscrire.</p>
+                <div class="modal-choices">
+                    <div class="choice-card" onclick="selectPartnerTypeForAuth(event, 'merchant')">
+                        <div class="choice-icon"
+                            style="color: var(--coral); margin-bottom: 15px; display: inline-flex; justify-content: center; align-items: center;">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                                <line x1="3" y1="6" x2="21" y2="6" />
+                                <path d="M16 10a4 4 0 0 1-8 0" />
+                            </svg>
+                        </div>
+                        <h4>Commerçant</h4>
+                        <p>Gérer mes Points Verts</p>
+                    </div>
+                    <div class="choice-card" onclick="selectPartnerTypeForAuth(event, 'other')">
+                        <div class="choice-icon"
+                            style="color: var(--coral); margin-bottom: 15px; display: inline-flex; justify-content: center; align-items: center;">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                                <line x1="12" y1="17" x2="12.01" y2="17" />
+                            </svg>
+                        </div>
+                        <h4>Autre</h4>
+                        <p>Collectivités &amp; structures locales</p>
+                    </div>
+                </div>
+                <button type="button" class="btn-back" onclick="goBackToChoice()">← Retour</button>
+            </div>
+
+            <!-- Étape Portail d'Authentification Classique (Connexion / Inscription) -->
+            <div id="modal-step-classic-auth" style="display: none;">
+                <h3 id="auth-modal-title">Portail de Connexion</h3>
+                <p class="modal-subtitle" id="auth-modal-subtitle">Connectez-vous ou créez votre compte en quelques
+                    instants.</p>
+
+                <!-- Onglets Connexion / Inscription -->
+                <div class="auth-tabs">
+                    <button type="button" class="auth-tab-btn active" id="tab-btn-login"
+                        onclick="switchAuthTab('login')">Connexion</button>
+                    <button type="button" class="auth-tab-btn" id="tab-btn-register"
+                        onclick="switchAuthTab('register')">Inscription</button>
+                </div>
+
+                <!-- Formulaire de Connexion -->
+                <form id="auth-login-form" class="auth-form-panel">
+                    <div class="form-group">
+                        <label for="login-email">Adresse email ou Identifiant</label>
+                        <input type="text" id="login-email" placeholder="votre@email.com" value="kids@bord" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Mot de passe</label>
+                        <input type="password" id="login-password" placeholder="••••••••" value="kids@bord" required>
+                    </div>
+                    <div class="form-row-auth"
+                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <div class="checkbox-group-auth" style="display: flex; gap: 8px; align-items: center;">
+                            <input type="checkbox" id="remember-me">
+                            <label for="remember-me" style="font-size: 13px; color: #555;">Se souvenir de moi</label>
+                        </div>
+                        <a href="#" class="forgot-password-link"
+                            style="font-size: 13px; color: var(--coral); font-weight: 700;"
+                            onclick="forgotPassword(event)">Mot de passe oublié ?</a>
+                    </div>
+                    <button type="submit" class="btn-primary full-width">Se connecter</button>
+                </form>
+
+                <!-- Formulaire d'Inscription -->
+                <form id="auth-register-form" class="auth-form-panel" style="display: none;">
+
+                    <!-- Champs Communs Parent -->
+                    <div class="parent-only-fields">
+                        <div class="form-row">
+                            <div class="form-group-half">
+                                <label for="parent-firstname">Prénom</label>
+                                <input type="text" id="parent-firstname" placeholder="Ex: Claire">
+                            </div>
+                            <div class="form-group-half">
+                                <label for="parent-lastname">Nom</label>
+                                <input type="text" id="parent-lastname" placeholder="Ex: Martin">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Champs Communs B2B Partenaires (School, Club, Merchant, Other) -->
+                    <div class="partner-only-fields" style="display: none;">
+                        <div class="form-group">
+                            <label for="partner-contact-name">Nom du contact</label>
+                            <input type="text" id="partner-contact-name" placeholder="Claire Martin">
+                        </div>
+                        <div class="form-group">
+                            <label for="partner-org-name" id="partner-org-label">Nom de l'établissement /
+                                commerce</label>
+                            <input type="text" id="partner-org-name" placeholder="Ex: École Jules Ferry">
+                        </div>
+                        <div class="form-group">
+                            <label for="partner-phone">Numéro de téléphone</label>
+                            <input type="tel" id="partner-phone" placeholder="06 12 34 56 78">
+                        </div>
+                    </div>
+
+                    <!-- Champs Partagés Email et Mot de passe pour Inscription -->
+                    <div class="form-group">
+                        <label for="register-email">Adresse email</label>
+                        <input type="email" id="register-email" placeholder="votre@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="register-password">Mot de passe</label>
+                        <input type="password" id="register-password" placeholder="•••••••• (Min. 6 caractères)">
+                    </div>
+
+                    <!-- Option Spécifique Parent : Code de confiance et Charte de ponctualité -->
+                    <div class="parent-only-fields">
+                        <div class="form-group">
+                            <label for="parent-code">Code de confiance établissement</label>
+                            <div class="code-input-wrapper">
+                                <input type="text" id="parent-code" placeholder="Ex: MONT-JULES-2026">
+                                <span class="tooltip-icon"
+                                    title="Ce code unique sécurisé vous a été transmis par votre école ou club via Pronote, email ou carnet de liaison.">?</span>
+                            </div>
+                            <p class="form-help">Pour tester, utilisez : <strong>MONT-JULES-2026</strong> ou
+                                <strong>MONT-HAND-2026</strong>
+                            </p>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="agree-charter">
+                            <label for="agree-charter">J'accepte la <strong>Charte de Ponctualité</strong> (retard
+                                maximum de 5 minutes pour respecter le trajet des parents pilotes).</label>
+                        </div>
+                    </div>
+
+                    <!-- Option Spécifique B2B CGU -->
+                    <div class="partner-only-fields" style="display: none;">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="agree-cgu">
+                            <label for="agree-cgu">J'accepte les Conditions Générales d'Utilisation (CGU) de Kids à
+                                bord.</label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-primary full-width" style="margin-top: 15px;">Créer mon
+                        compte</button>
+                </form>
+
+                <button type="button" class="btn-back" id="auth-back-btn" onclick="goBackToSelector()">← Retour</button>
+            </div>
+
+            <!-- Étape 3 : Succès Parent (Génération de la carte de membre) -->
+            <div id="modal-step-success" style="display: none;">
+                <div class="success-header">
+                    <div class="success-icon">✓</div>
+                    <h3>Communauté validée !</h3>
+                    <p id="success-school-name">Vous êtes membre officiel de la communauté.</p>
+                </div>
+
+                <div class="virtual-card">
+                    <div class="card-glow"></div>
+                    <div class="card-header">
+                        <div class="card-logo">Kids à bord</div>
+                        <span class="card-status">Validé • Réseau Fermé</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-info">
+                            <div class="info-label">MEMBRE</div>
+                            <div class="info-value" id="card-user-name">Claire Martin</div>
+
+                            <div class="info-label" style="margin-top: 10px;">COMMUNAUTÉ</div>
+                            <div class="info-value" id="card-school-name">École Jules Ferry (Montpellier)</div>
+                        </div>
+                        <div class="card-qr-box">
+                            <img src="secure_handover_qr.png" alt="QR Code de remise sécurisée" class="card-qr">
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span>Flashez ce QR Code pour sécuriser la remise de votre enfant</span>
+                    </div>
+                </div>
+
+                <p class="success-note">Votre compte est maintenant actif. La validation inversée via votre école
+                    élimine 100% de la friction administrative tout en garantissant un niveau de sécurité optimal.</p>
+                <button type="button" class="btn-mint full-width" onclick="closeModal()">Accéder à mon espace
+                    membre</button>
+            </div>
+
+            <!-- Étape 4 : Succès Partenaire B2B -->
+            <div id="modal-step-partner-success" style="display: none; text-align: center;">
+                <div class="success-header">
+                    <div class="success-icon" style="background-color: var(--coral); color: white;">✓</div>
+                    <h3>Inscription enregistrée !</h3>
+                    <p class="modal-subtitle">Bienvenue dans le réseau Kids à bord.</p>
+                </div>
+                <div class="partner-success-card"
+                    style="background-color: var(--cream); border-radius: 20px; padding: 25px; margin-bottom: 25px; text-align: left; border: 1px solid rgba(0,0,0,0.05);">
+                    <h4 style="color: var(--main-blue); margin-bottom: 10px; font-weight: 700;">Que se passe-t-il
+                        ensuite ?</h4>
+                    <ul
+                        style="list-style-type: decimal; padding-left: 20px; font-size: 14px; color: var(--text); display: flex; flex-direction: column; gap: 10px;">
+                        <li><strong>Validation de sécurité :</strong> Notre équipe vérifie vos informations sous 24
+                            heures ouvrées.</li>
+                        <li><strong>Activation de l'espace :</strong> Vous recevrez vos codes de connexion temporaires
+                            par email.</li>
+                        <li><strong>Kit de bienvenue :</strong> Nous vous enverrons votre kit de communication pour
+                            lancer la communauté auprès de vos membres/clients.</li>
+                    </ul>
+                </div>
+                <p class="success-note">Si vous avez choisi une offre payante, aucun débit ne sera effectué avant la
+                    validation et l'activation finale de votre espace par nos services.</p>
+                <button type="button" class="btn-primary full-width" onclick="closeModal()">Fermer et retourner à
+                    l'accueil</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Charte de Ponctualité -->
+    <div id="charter-modal" class="modal">
+        <div class="modal-content" style="max-width: 600px; width: 100%;">
+            <span class="close-modal" onclick="closeCharterModal()">&times;</span>
+            <div class="charter-modal-body" style="padding: 20px 10px;">
+                <h3
+                    style="font-family: var(--font-title, 'Quicksand', sans-serif); color: var(--main-blue); font-size: 26px; font-weight: 800; text-align: center; margin-bottom: 20px;">
+                    La charte de ponctualité</h3>
+                <p
+                    style="font-size: 15px; color: var(--text); line-height: 1.6; margin-bottom: 20px; text-align: center;">
+                    Afin d'assurer des trajets sereins pour les enfants et respectueux pour tous les parents, chaque
+                    membre de la communauté s'engage à respecter les règles suivantes :
+                </p>
+                <div style="display: flex; flex-direction: column; gap: 15px; text-align: left;">
+                    <div
+                        style="background-color: var(--cream); padding: 15px; border-radius: 12px; border-left: 4px solid var(--coral);">
+                        <strong style="color: var(--main-blue); font-size: 16px; display: block; margin-bottom: 5px;">1.
+                            La règle des 5 minutes</strong>
+                        <p style="font-size: 13.5px; color: #555; line-height: 1.5; margin: 0;">Tout conducteur ou
+                            passager s'engage à être présent au point de rendez-vous à l'heure exacte. Un retard maximal
+                            de 5 minutes est toléré avant le départ du véhicule.</p>
+                    </div>
+                    <div
+                        style="background-color: var(--cream); padding: 15px; border-radius: 12px; border-left: 4px solid var(--water-green);">
+                        <strong style="color: var(--main-blue); font-size: 16px; display: block; margin-bottom: 5px;">2.
+                            Communication immédiate</strong>
+                        <p style="font-size: 13.5px; color: #555; line-height: 1.5; margin: 0;">En cas d'imprévu majeur,
+                            le parent s'engage à prévenir le conducteur immédiatement via l'application ou par téléphone
+                            avant l'heure prévue.</p>
+                    </div>
+                    <div
+                        style="background-color: var(--cream); padding: 15px; border-radius: 12px; border-left: 4px solid var(--main-blue);">
+                        <strong style="color: var(--main-blue); font-size: 16px; display: block; margin-bottom: 5px;">3.
+                            Sécurité et bienveillance</strong>
+                        <p style="font-size: 13.5px; color: #555; line-height: 1.5; margin: 0;">Le conducteur s'assure
+                            que chaque enfant est correctement attaché. Les enfants s'engagent à respecter les règles de
+                            vie à bord du véhicule.</p>
+                    </div>
+                </div>
+                <button type="button" class="btn-primary full-width" onclick="closeCharterModal(event)"
+                    style="margin-top: 25px; border-radius: 50px; padding: 12px;">J'ai compris et j'accepte</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Mes Points Verts -->
+    <div id="points-verts-modal" class="modal">
+        <div class="modal-content" style="max-width: 800px; width: 100%; border-radius: 24px; padding: 40px 30px;">
+            <span class="close-modal" onclick="closePointsVertsModal()">&times;</span>
+
+            <!-- Header de l'Espace Points Verts -->
+            <div class="points-verts-header" style="text-align: center; margin-bottom: 30px;">
+                <div
+                    style="background-color: rgba(23, 195, 178, 0.1); width: 70px; height: 70px; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin: 0 auto 15px;">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#17c3b2" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                    </svg>
+                </div>
+                <h3
+                    style="font-family: var(--font-title, 'Quicksand', sans-serif); color: var(--main-blue); font-size: 28px; font-weight: 800; margin-bottom: 5px;">
+                    Mes Points Verts</h3>
+                <p style="color: #666; font-size: 15px;">Votre programme solidaire et écologique de covoiturage scolaire
+                </p>
+            </div>
+
+            <!-- Dashboard / Balance Section -->
+            <div class="points-balance-card"
+                style="background: linear-gradient(135deg, #17c3b2 0%, #227c9d 100%); padding: 25px; border-radius: 20px; color: white; display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; box-shadow: 0 10px 25px rgba(23, 195, 178, 0.25);">
+                <div>
+                    <span
+                        style="font-size: 13px; opacity: 0.9; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Solde
+                        disponible</span>
+                    <h2 id="points-balance-value"
+                        style="font-size: 36px; font-weight: 800; margin: 5px 0 0 0; display: flex; align-items: center; gap: 8px;">
+                        150 <span style="font-size: 18px; font-weight: 500; opacity: 0.9;">Points Verts</span>
+                    </h2>
+                </div>
+                <div style="text-align: right;">
+                    <span
+                        style="font-size: 12px; background-color: rgba(255,255,255,0.2); padding: 6px 12px; border-radius: 50px; font-weight: 600; display: inline-block;">
+                        Niveau 2 : Éco-Citoyen
+                    </span>
+                    <p style="font-size: 12px; margin: 8px 0 0 0; opacity: 0.8;">Prochain palier à 200 pts</p>
+                </div>
+            </div>
+
+            <!-- Grid de navigation interne -->
+            <div class="points-verts-grid-2col"
+                style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px;">
+
+                <!-- Carte Explication / Pédagogie -->
+                <div
+                    style="background-color: var(--cream); border-radius: 20px; padding: 20px; border: 1px solid rgba(0,0,0,0.03);">
+                    <h4
+                        style="color: var(--main-blue); font-weight: 700; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; font-size: 16px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#17c3b2" stroke-width="2">
+                            <path
+                                d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 16a1 1 0 1 1 1-1 1 1 0 0 1-1 1zm1-5.16V14a1 1 0 0 1-2 0v-1.84a1 1 0 0 1 1-1 1.5 1.5 0 1 0-1.5-1.5 1 1 0 0 1-2 0A3.5 3.5 0 1 1 13 12.84z" />
+                        </svg>
+                        Comment ça marche ?
+                    </h4>
+                    <p style="font-size: 13px; color: #555; line-height: 1.5; margin-bottom: 10px;">
+                        Les Points Verts récompensent votre engagement. Chaque trajet validé cumule des points
+                        automatiquement.
+                    </p>
+                    <p style="font-size: 13px; color: #555; line-height: 1.5; margin-bottom: 0;">
+                        <strong>1 trajet = 10 Points Verts</strong>. Plus vous effectuez de trajets, plus vous cumulez
+                        de points pour les échanger chez nos partenaires.
+                    </p>
+                </div>
+
+                <!-- Carte Éco-Impact -->
+                <div
+                    style="background-color: var(--cream); border-radius: 20px; padding: 20px; border: 1px solid rgba(0,0,0,0.03);">
+                    <h4
+                        style="color: var(--main-blue); font-weight: 700; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; font-size: 16px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#17c3b2" stroke-width="2">
+                            <path
+                                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" />
+                            <path d="M12 2V22" />
+                            <path d="M12 12H2C2 6.47715 6.47715 2 12 2" />
+                        </svg>
+                        Mon Éco-Impact
+                    </h4>
+                    <p style="font-size: 13px; color: #555; line-height: 1.5; margin-bottom: 10px;">
+                        Grâce à vos trajets groupés, vous avez évité l'émission de :
+                    </p>
+                    <p
+                        style="font-size: 15px; color: var(--coral); font-weight: 700; margin: 0; display: flex; align-items: center; gap: 6px;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                        </svg>
+                        42 kg de CO₂ ce mois-ci
+                    </p>
+                </div>
+            </div>
+
+            <!-- Historique et Récompenses Partenaires -->
+            <div class="points-verts-grid-2col" style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 30px;">
+
+                <!-- Liste des Récompenses disponibles -->
+                <div>
+                    <h4
+                        style="color: var(--main-blue); font-weight: 700; margin-bottom: 15px; display: flex; align-items: center; gap: 8px; font-size: 18px;">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#17c3b2" stroke-width="2">
+                            <path
+                                d="M20 12v10H4V12M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z" />
+                        </svg>
+                        Offres des commerces locaux
+                    </h4>
+
+                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                        <!-- Offre 1 -->
+                        <div class="points-verts-flex-row"
+                            style="background-color: var(--white); border: 1px solid rgba(0,0,0,0.06); border-radius: 16px; padding: 15px; display: flex; justify-content: space-between; align-items: center; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.02);">
+                            <div style="display: flex; gap: 12px; align-items: center;">
+                                <div style="font-size: 24px;">🥐</div>
+                                <div>
+                                    <strong
+                                        style="display: block; font-size: 14px; color: var(--main-blue);">Boulangerie
+                                        L'Épi d'Or</strong>
+                                    <span style="font-size: 12px; color: #777;">1 viennoiserie offerte à l'achat d'une
+                                        formule</span>
+                                </div>
+                            </div>
+                            <button type="button" class="btn-mint" onclick="redeemOffer('Boulangerie L\'Épi d\'Or', 50)"
+                                style="padding: 6px 12px; font-size: 12px; border-radius: 50px; min-width: 80px;">50
+                                pts</button>
+                        </div>
+
+                        <!-- Offre 2 -->
+                        <div class="points-verts-flex-row"
+                            style="background-color: var(--white); border: 1px solid rgba(0,0,0,0.06); border-radius: 16px; padding: 15px; display: flex; justify-content: space-between; align-items: center; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.02);">
+                            <div style="display: flex; gap: 12px; align-items: center;">
+                                <div style="font-size: 24px;">📚</div>
+                                <div>
+                                    <strong style="display: block; font-size: 14px; color: var(--main-blue);">Librairie
+                                        des Mots</strong>
+                                    <span style="font-size: 12px; color: #777;">Bon d'achat de 5€ dès 25€ d'achat</span>
+                                </div>
+                            </div>
+                            <button type="button" class="btn-mint" onclick="redeemOffer('Librairie des Mots', 100)"
+                                style="padding: 6px 12px; font-size: 12px; border-radius: 50px; min-width: 80px;">100
+                                pts</button>
+                        </div>
+
+                        <!-- Offre 3 -->
+                        <div class="points-verts-flex-row"
+                            style="background-color: var(--white); border: 1px solid rgba(0,0,0,0.06); border-radius: 16px; padding: 15px; display: flex; justify-content: space-between; align-items: center; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.02);">
+                            <div style="display: flex; gap: 12px; align-items: center;">
+                                <div style="font-size: 24px;">☕</div>
+                                <div>
+                                    <strong style="display: block; font-size: 14px; color: var(--main-blue);">Café de la
+                                        Mairie</strong>
+                                    <span style="font-size: 12px; color: #777;">Un café ou chocolat chaud offert</span>
+                                </div>
+                            </div>
+                            <button type="button" class="btn-mint" onclick="redeemOffer('Café de la Mairie', 40)"
+                                style="padding: 6px 12px; font-size: 12px; border-radius: 50px; min-width: 80px;">40
+                                pts</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Historique -->
+                <div>
+                    <h4
+                        style="color: var(--main-blue); font-weight: 700; margin-bottom: 15px; display: flex; align-items: center; gap: 8px; font-size: 18px;">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#17c3b2" stroke-width="2">
+                            <path d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" />
+                        </svg>
+                        Historique
+                    </h4>
+
+                    <div id="points-history-list" style="display: flex; flex-direction: column; gap: 12px;">
+                        <div style="border-left: 3px solid #17c3b2; padding-left: 10px; font-size: 12.5px;">
+                            <span style="font-weight: 700; color: #17c3b2; display: block;">+10 Points Verts</span>
+                            <span style="color: var(--main-blue); font-weight: 600;">Trajet Conducteur validé</span>
+                            <p style="margin: 2px 0 0 0; color: #888; font-size: 11px;">Aujourd'hui, 08:45</p>
+                        </div>
+                        <div style="border-left: 3px solid #17c3b2; padding-left: 10px; font-size: 12.5px;">
+                            <span style="font-weight: 700; color: #17c3b2; display: block;">+10 Points Verts</span>
+                            <span style="color: var(--main-blue); font-weight: 600;">Trajet Conducteur validé</span>
+                            <p style="margin: 2px 0 0 0; color: #888; font-size: 11px;">Hier, 16:30</p>
+                        </div>
+                        <div style="border-left: 3px solid #17c3b2; padding-left: 10px; font-size: 12.5px;">
+                            <span style="font-weight: 700; color: #17c3b2; display: block;">+30 Points Verts</span>
+                            <span style="color: var(--main-blue); font-weight: 600;">Bonus Inscription École</span>
+                            <p style="margin: 2px 0 0 0; color: #888; font-size: 11px;">14/07/2026</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Footer Pédagogique -->
+            <div
+                style="margin-top: 35px; text-align: center; font-size: 12.5px; color: #666; border-top: 1px solid rgba(0,0,0,0.06); padding-top: 25px;">
+                L'objectif est de récompenser les familles engagées dans une mobilité plus responsable tout en soutenant
+                l'économie de proximité de nos quartiers.
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal Espace Parents (Showcase Dashboard) -->
+    <div id="dashboard-modal" class="modal">
+        <div class="modal-content" style="max-width: 850px; width: 100%; border-radius: 24px; padding: 40px 30px;">
+            <span class="close-modal" onclick="closeDashboardModal()">&times;</span>
+
+            <!-- Header du Dashboard -->
+            <div style="text-align: center; margin-bottom: 25px;">
+                <h3
+                    style="font-family: var(--font-title, 'Quicksand', sans-serif); color: var(--main-blue); font-size: 26px; font-weight: 800;">
+                    Mon Espace Parents</h3>
+                <p style="color: #666; font-size: 14px; margin-top: 5px;">Bienvenue dans votre espace connecté,
+                    <strong>Claire Martin</strong>
+                </p>
+            </div>
+
+            <!-- Toggle Mode Passager / Conducteur -->
+            <div
+                style="display: flex; background-color: var(--cream); border-radius: 50px; padding: 5px; margin-bottom: 30px; max-width: 450px; margin-left: auto; margin-right: auto; border: 1px solid rgba(0,0,0,0.05);">
+                <button type="button" id="btn-dash-passenger" class="btn-dash-tab active"
+                    onclick="switchDashboardMode('passenger')" style="flex: 1;">Mode Passager (Trouver)</button>
+                <button type="button" id="btn-dash-driver" class="btn-dash-tab" onclick="switchDashboardMode('driver')"
+                    style="flex: 1;">Mode Conducteur (Proposer)</button>
+            </div>
+
+            <!-- VUE 1 : MODE PASSAGER -->
+            <div id="dash-view-passenger" style="display: block;">
+                <h4
+                    style="color: var(--main-blue); font-weight: 700; margin-bottom: 15px; font-size: 16px; text-align: left;">
+                    Rechercher un trajet pour votre enfant</h4>
+
+                <!-- Barre de recherche pré-remplie -->
+                <div
+                    style="display: flex; gap: 15px; background-color: var(--cream); padding: 15px; border-radius: 15px; margin-bottom: 25px; border: 1px solid rgba(0,0,0,0.04); flex-wrap: wrap; text-align: left;">
+                    <div style="flex: 1.2; min-width: 180px;">
+                        <label
+                            style="font-size: 11px; font-weight: 700; color: #777; display: block; margin-bottom: 5px;">POINT
+                            DE DÉPART</label>
+                        <input type="text" id="dash-search-from" value="Domicile (Castelnau-le-Lez)"
+                            style="width: 100%; border: 1px solid rgba(0,0,0,0.1); padding: 8px 12px; border-radius: 8px; font-size: 13px;">
+                    </div>
+                    <div style="flex: 1.2; min-width: 180px;">
+                        <label
+                            style="font-size: 11px; font-weight: 700; color: #777; display: block; margin-bottom: 5px;">ÉTABLISSEMENT
+                            DESTINATAIRE</label>
+                        <input type="text" id="dash-search-to" value="École Jules Ferry (Montpellier)"
+                            style="width: 100%; border: 1px solid rgba(0,0,0,0.1); padding: 8px 12px; border-radius: 8px; font-size: 13px;">
+                    </div>
+                    <div style="flex: 0.8; min-width: 120px;">
+                        <label
+                            style="font-size: 11px; font-weight: 700; color: #777; display: block; margin-bottom: 5px;">HEURE
+                            SOUHAITÉE</label>
+                        <input type="text" id="dash-search-time" value="08:30"
+                            style="width: 100%; border: 1px solid rgba(0,0,0,0.1); padding: 8px 12px; border-radius: 8px; font-size: 13px;">
+                    </div>
+                    <div style="flex: 0.6; min-width: 120px; display: flex; align-items: flex-end;">
+                        <button type="button" class="btn-primary" onclick="updatePassengerSearch()"
+                            style="width: 100%; padding: 10px 16px; font-size: 13px; border-radius: 8px; font-weight: 700; height: 41px;">Rechercher</button>
+                    </div>
+                </div>
+
+                <h4
+                    style="color: var(--main-blue); font-weight: 700; margin-bottom: 15px; font-size: 16px; text-align: left;">
+                    Conducteurs validés sur votre trajet</h4>
+
+                <!-- Conducteurs Grid -->
+                <div style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 15px;">
+                    <!-- Conducteur 1 -->
+                    <div class="points-verts-flex-row"
+                        style="background-color: var(--white); border: 1px solid rgba(0,0,0,0.06); border-radius: 16px; padding: 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.02); gap: 15px; text-align: left;">
+                        <div style="display: flex; gap: 15px; align-items: center;">
+                            <div
+                                style="width: 46px; height: 46px; background-color: var(--main-blue); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: 700; font-size: 16px;">
+                                MD</div>
+                            <div>
+                                <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                                    <strong style="font-size: 14.5px; color: var(--main-blue);">Marc D.</strong>
+                                    <span
+                                        style="font-size: 11px; background-color: rgba(34, 124, 157, 0.1); color: var(--main-blue); padding: 2px 8px; border-radius: 20px; font-weight: 600;">Papa
+                                        de Lucas (CM1)</span>
+                                </div>
+                                <span style="font-size: 12.5px; color: #666; display: block; margin-top: 3px;">📍
+                                    Castelnau ➔ École Jules Ferry • Départ 08:15</span>
+                                <div style="display: flex; gap: 12px; margin-top: 5px; font-size: 12px; color: #555;">
+                                    <span>🚗 Peugeot 3008 (Gris)</span>
+                                    <span style="color: #ffb703;">★ 4.9 (42 trajets)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="text-align: right; min-width: 150px;">
+                            <span
+                                style="font-size: 12px; color: var(--water-green); font-weight: 700; display: block; margin-bottom: 8px;">🟢
+                                2 places libres</span>
+                            <button type="button" class="btn-primary" onclick="requestRide(this, 'Marc D.')"
+                                style="padding: 8px 16px; font-size: 12.5px; border-radius: 50px;">Demander le
+                                trajet</button>
+                        </div>
+                    </div>
+
+                    <!-- Conducteur 2 -->
+                    <div class="points-verts-flex-row"
+                        style="background-color: var(--white); border: 1px solid rgba(0,0,0,0.06); border-radius: 16px; padding: 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.02); gap: 15px; text-align: left;">
+                        <div style="display: flex; gap: 15px; align-items: center;">
+                            <div
+                                style="width: 46px; height: 46px; background-color: var(--water-green); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: 700; font-size: 16px;">
+                                SL</div>
+                            <div>
+                                <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                                    <strong style="font-size: 14.5px; color: var(--main-blue);">Sophie L.</strong>
+                                    <span
+                                        style="font-size: 11px; background-color: rgba(23, 195, 178, 0.1); color: var(--water-green); padding: 2px 8px; border-radius: 20px; font-weight: 600;">Maman
+                                        de Léa (CE2)</span>
+                                </div>
+                                <span style="font-size: 12.5px; color: #666; display: block; margin-top: 3px;">📍
+                                    Rond-point Lachenal ➔ École Jules Ferry • Départ 08:20</span>
+                                <div style="display: flex; gap: 12px; margin-top: 5px; font-size: 12px; color: #555;">
+                                    <span>🚗 Renault Zoe (Bleu)</span>
+                                    <span style="color: #ffb703;">★ 4.8 (18 trajets)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="text-align: right; min-width: 150px;">
+                            <span
+                                style="font-size: 12px; color: var(--water-green); font-weight: 700; display: block; margin-bottom: 8px;">🟢
+                                1 place libre</span>
+                            <button type="button" class="btn-primary" onclick="requestRide(this, 'Sophie L.')"
+                                style="padding: 8px 16px; font-size: 12.5px; border-radius: 50px;">Demander le
+                                trajet</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VUE 2 : MODE CONDUCTEUR -->
+            <div id="dash-view-driver" style="display: none;">
+                <!-- Trajet actif -->
+                <div class="points-verts-flex-row"
+                    style="background-color: rgba(23, 195, 178, 0.05); border: 1px dashed var(--water-green); padding: 20px; border-radius: 16px; margin-bottom: 25px; display: flex; justify-content: space-between; align-items: center; text-align: left; gap: 15px;">
+                    <div id="driver-trajet-display" style="flex: 1;">
+                        <span
+                            style="font-size: 11px; background-color: var(--water-green); color: white; padding: 2px 8px; border-radius: 20px; font-weight: 700; display: inline-block; margin-bottom: 5px;">TRAJET
+                            DE RETOUR ACTIF</span>
+                        <strong id="driver-trajet-route"
+                            style="display: block; font-size: 15px; color: var(--main-blue);">Retour : École Jules Ferry
+                            ➔ Castelnau-le-Lez</strong>
+                        <span id="driver-trajet-time" style="font-size: 12.5px; color: #555;">Aujourd'hui à 16:30 • 3
+                            places disponibles</span>
+                    </div>
+                    <div id="driver-trajet-edit" style="display: none; flex: 1; text-align: left;">
+                        <span
+                            style="font-size: 11px; background-color: var(--coral); color: white; padding: 2px 8px; border-radius: 20px; font-weight: 700; display: inline-block; margin-bottom: 5px;">MODIFICATION
+                            DU TRAJET</span>
+                        <div style="display: flex; flex-direction: column; gap: 8px;">
+                            <input type="text" id="edit-driver-route"
+                                value="Retour : École Jules Ferry ➔ Castelnau-le-Lez"
+                                style="width: 100%; border: 1px solid rgba(0,0,0,0.1); padding: 6px 12px; border-radius: 8px; font-size: 13.5px;">
+                            <input type="text" id="edit-driver-time" value="Aujourd'hui à 16:30 • 3 places disponibles"
+                                style="width: 100%; border: 1px solid rgba(0,0,0,0.1); padding: 6px 12px; border-radius: 8px; font-size: 13px;">
+                        </div>
+                    </div>
+                    <div style="text-align: right; min-width: 120px;">
+                        <span style="font-size: 12px; color: #777; display: block; margin-bottom: 5px;">ID :
+                            #KAB-992</span>
+                        <button type="button" id="btn-driver-edit-toggle" class="btn-secondary-outline"
+                            onclick="toggleDriverEdit()"
+                            style="padding: 5px 12px; font-size: 12px; border-radius: 50px; border-color: rgba(0,0,0,0.1); color: #555;">Modifier</button>
+                    </div>
+                </div>
+
+                <h4
+                    style="color: var(--main-blue); font-weight: 700; margin-bottom: 15px; font-size: 16px; text-align: left;">
+                    Demandes d'accompagnement reçues</h4>
+
+                <!-- Liste demandes passagers -->
+                <div style="display: flex; flex-direction: column; gap: 15px;">
+                    <!-- Demande 1 -->
+                    <div class="points-verts-flex-row"
+                        style="background-color: var(--white); border: 1px solid rgba(0,0,0,0.06); border-radius: 16px; padding: 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.02); gap: 15px; text-align: left;">
+                        <div style="display: flex; gap: 15px; align-items: center;">
+                            <div
+                                style="width: 46px; height: 46px; background-color: var(--coral); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: 700; font-size: 16px;">
+                                TM</div>
+                            <div>
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <strong style="font-size: 14.5px; color: var(--main-blue);">Thomas (8 ans)</strong>
+                                    <span
+                                        style="font-size: 11px; background-color: rgba(254, 109, 115, 0.1); color: var(--coral); padding: 2px 8px; border-radius: 20px; font-weight: 600;">Fils
+                                        de Claire M.</span>
+                                </div>
+                                <span style="font-size: 12.5px; color: #666; display: block; margin-top: 3px;">📍 Prise
+                                    en charge : École Jules Ferry (Portail principal) ➔ Castelnau</span>
+                                <p style="margin: 3px 0 0 0; font-size: 11px; color: #888;">Demande reçue il y a 10 min
+                                </p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 10px; align-items: center;">
+                            <button type="button" class="btn-mint" onclick="acceptRide(this, 'Thomas')"
+                                style="padding: 8px 16px; font-size: 12.5px; border-radius: 50px;">Accepter</button>
+                            <button type="button" class="btn-secondary-outline" onclick="declineRide(this)"
+                                style="padding: 8px 16px; font-size: 12.5px; border-radius: 50px; border-color: rgba(0,0,0,0.1); color: #777;">Refuser</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer d'information -->
+            <div
+                style="margin-top: 30px; text-align: center; font-size: 12.5px; color: #666; border-top: 1px solid rgba(0,0,0,0.06); padding-top: 20px;">
+                Espace connecté avec le profil de démonstration.
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal Espace Partenaires (School & Club Showcase Dashboard) -->
+    <div id="partner-dashboard-modal" class="modal">
+        <div class="modal-content" style="max-width: 850px; width: 100%; border-radius: 24px; padding: 40px 30px;">
+            <span class="close-modal" onclick="closePartnerDashboardModal()">&times;</span>
+
+            <!-- Header -->
+            <div style="text-align: center; margin-bottom: 25px;">
+                <h3 id="partner-dash-title"
+                    style="font-family: var(--font-title, 'Quicksand', sans-serif); color: var(--main-blue); font-size: 26px; font-weight: 800;">
+                    Espace Partenaire</h3>
+                <p id="partner-dash-subtitle" style="color: #666; font-size: 14px; margin-top: 5px;">Portail de suivi de
+                    la mobilité locale</p>
+            </div>
+
+            <!-- Statistiques Cards -->
+            <div class="points-verts-grid-2col"
+                style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 30px;">
+                <div
+                    style="background-color: rgba(34, 124, 157, 0.05); border: 1px solid rgba(34, 124, 157, 0.1); padding: 15px; border-radius: 16px; text-align: center;">
+                    <span
+                        style="font-size: 11px; color: var(--main-blue); font-weight: 700; display: block; margin-bottom: 5px;">FAMILLES
+                        INSCRITES</span>
+                    <input type="number" id="partner-stat-families" value="84"
+                        style="font-family: var(--font-title, 'Quicksand', sans-serif); font-size: 24px; font-weight: 800; color: var(--main-blue); width: 80px; text-align: center; border: none; background: transparent; outline: none; border-bottom: 1px dashed var(--main-blue);">
+                </div>
+                <div
+                    style="background-color: rgba(23, 195, 178, 0.05); border: 1px solid rgba(23, 195, 178, 0.1); padding: 15px; border-radius: 16px; text-align: center;">
+                    <span
+                        style="font-size: 11px; color: var(--water-green); font-weight: 700; display: block; margin-bottom: 5px;">TRAJETS
+                        PARTAGÉS</span>
+                    <input type="number" id="partner-stat-rides" value="312"
+                        style="font-family: var(--font-title, 'Quicksand', sans-serif); font-size: 24px; font-weight: 800; color: var(--water-green); width: 80px; text-align: center; border: none; background: transparent; outline: none; border-bottom: 1px dashed var(--water-green);">
+                </div>
+                <div
+                    style="background-color: rgba(254, 109, 115, 0.05); border: 1px solid rgba(254, 109, 115, 0.1); padding: 15px; border-radius: 16px; text-align: center;">
+                    <span
+                        style="font-size: 11px; color: var(--coral); font-weight: 700; display: block; margin-bottom: 5px;">CO₂
+                        ÉCONOMISÉ</span>
+                    <div id="partner-stat-co2"
+                        style="font-family: var(--font-title, 'Quicksand', sans-serif); font-size: 24px; font-weight: 800; color: var(--coral);">
+                        1 240 kg</div>
+                </div>
+            </div>
+
+            <!-- Update stats button -->
+            <div style="text-align: right; margin-top: -15px; margin-bottom: 25px;">
+                <button type="button" class="btn-primary" onclick="updatePartnerStats()"
+                    style="padding: 6px 12px; font-size: 12px; border-radius: 8px;">Mettre à jour les stats</button>
+            </div>
+
+            <!-- Double column details -->
+            <div class="points-verts-grid-2col"
+                style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 25px; text-align: left;">
+
+                <!-- Gestion des membres -->
+                <div>
+                    <h4 style="color: var(--main-blue); font-weight: 700; margin-bottom: 15px; font-size: 16px;">Membres
+                        actifs & Charte de ponctualité</h4>
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+
+                        <!-- Parent 1 -->
+                        <div class="points-verts-flex-row"
+                            style="background-color: var(--white); border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; font-size: 13.5px; gap: 10px;">
+                            <div>
+                                <strong style="color: var(--main-blue);">Claire Martin</strong>
+                                <span id="partner-member-school-1"
+                                    style="font-size: 11.5px; color: #666; display: block;">Maman de Thomas (8 ans) •
+                                    École Jules Ferry</span>
+                            </div>
+                            <span
+                                style="font-size: 12px; color: var(--water-green); font-weight: 700; white-space: nowrap;">✅
+                                Charte signée</span>
+                        </div>
+
+                        <!-- Parent 2 -->
+                        <div class="points-verts-flex-row"
+                            style="background-color: var(--white); border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; font-size: 13.5px; gap: 10px;">
+                            <div>
+                                <strong style="color: var(--main-blue);">Marc Dupont</strong>
+                                <span id="partner-member-school-2"
+                                    style="font-size: 11.5px; color: #666; display: block;">Papa de Lucas (10 ans) •
+                                    École Jules Ferry</span>
+                            </div>
+                            <span
+                                style="font-size: 12px; color: var(--water-green); font-weight: 700; white-space: nowrap;">✅
+                                Charte signée</span>
+                        </div>
+
+                        <!-- Parent 3 -->
+                        <div class="points-verts-flex-row"
+                            style="background-color: var(--white); border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; font-size: 13.5px; gap: 10px;">
+                            <div>
+                                <strong style="color: var(--main-blue);">Sophie Legrand</strong>
+                                <span id="partner-member-school-3"
+                                    style="font-size: 11.5px; color: #666; display: block;">Maman de Léa (9 ans) • École
+                                    Jules Ferry</span>
+                            </div>
+                            <button type="button" class="btn-mint" onclick="remindParent(this, 'Sophie Legrand')"
+                                style="padding: 5px 12px; font-size: 11.5px; border-radius: 50px; white-space: nowrap; min-width: 80px;">Rappeler</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lignes de covoiturage recommandées -->
+                <div>
+                    <h4 id="partner-lines-header"
+                        style="color: var(--main-blue); font-weight: 700; margin-bottom: 15px; font-size: 16px;">Lignes
+                        de covoiturage actives</h4>
+                    <div style="display: flex; flex-direction: column; gap: 15px;">
+
+                        <!-- Ligne 1 -->
+                        <div
+                            style="background-color: var(--cream); border: 1px solid rgba(0,0,0,0.04); padding: 15px; border-radius: 16px;">
+                            <div id="school-line-display-1">
+                                <strong id="school-line-title-1"
+                                    style="display: block; font-size: 13.5px; color: var(--main-blue);">Ligne 1 :
+                                    Castelnau-le-Lez ➔ École</strong>
+                                <span id="school-line-desc-1"
+                                    style="font-size: 12px; color: #666; display: block; margin-top: 3px;">Départ 08:00
+                                    • 12 enfants inscrits</span>
+                            </div>
+                            <div id="school-line-edit-1" style="display: none; margin-bottom: 8px;">
+                                <input type="text" id="edit-school-line-title-1"
+                                    value="Ligne 1 : Castelnau-le-Lez ➔ École"
+                                    style="width: 100%; border: 1px solid rgba(0,0,0,0.1); padding: 5px 8px; border-radius: 6px; font-size: 12.5px; margin-bottom: 5px;">
+                                <input type="text" id="edit-school-line-desc-1"
+                                    value="Départ 08:00 • 12 enfants inscrits"
+                                    style="width: 100%; border: 1px solid rgba(0,0,0,0.1); padding: 5px 8px; border-radius: 6px; font-size: 12px;">
+                            </div>
+                            <div style="text-align: right; margin-top: 8px;">
+                                <button type="button" id="btn-school-line-edit-1" class="btn-secondary-outline"
+                                    onclick="toggleSchoolLineEdit(1)"
+                                    style="padding: 4px 10px; font-size: 11px; border-radius: 50px;">Modifier</button>
+                            </div>
+                        </div>
+
+                        <!-- Ligne 2 -->
+                        <div
+                            style="background-color: var(--cream); border: 1px solid rgba(0,0,0,0.04); padding: 15px; border-radius: 16px;">
+                            <div id="school-line-display-2">
+                                <strong id="school-line-title-2"
+                                    style="display: block; font-size: 13.5px; color: var(--main-blue);">Ligne 2 :
+                                    Rond-point Lachenal ➔ École</strong>
+                                <span id="school-line-desc-2"
+                                    style="font-size: 12px; color: #666; display: block; margin-top: 3px;">Départ 08:10
+                                    • 8 enfants inscrits</span>
+                            </div>
+                            <div id="school-line-edit-2" style="display: none; margin-bottom: 8px;">
+                                <input type="text" id="edit-school-line-title-2"
+                                    value="Ligne 2 : Rond-point Lachenal ➔ École"
+                                    style="width: 100%; border: 1px solid rgba(0,0,0,0.1); padding: 5px 8px; border-radius: 6px; font-size: 12.5px; margin-bottom: 5px;">
+                                <input type="text" id="edit-school-line-desc-2"
+                                    value="Départ 08:10 • 8 enfants inscrits"
+                                    style="width: 100%; border: 1px solid rgba(0,0,0,0.1); padding: 5px 8px; border-radius: 6px; font-size: 12px;">
+                            </div>
+                            <div style="text-align: right; margin-top: 8px;">
+                                <button type="button" id="btn-school-line-edit-2" class="btn-secondary-outline"
+                                    onclick="toggleSchoolLineEdit(2)"
+                                    style="padding: 4px 10px; font-size: 11px; border-radius: 50px;">Modifier</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Footer -->
+            <div
+                style="margin-top: 30px; text-align: center; font-size: 12.5px; color: #666; border-top: 1px solid rgba(0,0,0,0.06); padding-top: 20px;">
+                Espace connecté avec le profil de démonstration Partenaire.
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal Espace Commerçants & Autres (Merchant & Other Showcase Dashboard) -->
+    <div id="merchant-dashboard-modal" class="modal">
+        <div class="modal-content" style="max-width: 850px; width: 100%; border-radius: 24px; padding: 40px 30px;">
+            <span class="close-modal" onclick="closeMerchantDashboardModal()">&times;</span>
+
+            <!-- Header -->
+            <div style="text-align: center; margin-bottom: 25px;">
+                <h3 id="merchant-dash-title"
+                    style="font-family: var(--font-title, 'Quicksand', sans-serif); color: var(--main-blue); font-size: 26px; font-weight: 800;">
+                    Espace Commerçant — Boulangerie L'Épi d'Or</h3>
+                <p id="merchant-dash-subtitle" style="color: #666; font-size: 14px; margin-top: 5px;">Programme Points
+                    Verts & Fidélité locale</p>
+            </div>
+
+            <!-- Statistiques Cards -->
+            <div class="points-verts-grid-2col"
+                style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 30px;">
+                <div
+                    style="background-color: rgba(34, 124, 157, 0.05); border: 1px solid rgba(34, 124, 157, 0.1); padding: 15px; border-radius: 16px; text-align: center;">
+                    <span
+                        style="font-size: 11px; color: var(--main-blue); font-weight: 700; display: block; margin-bottom: 5px;">POINTS
+                        REÇUS</span>
+                    <input type="number" id="merchant-stat-points" value="1850"
+                        style="font-family: var(--font-title, 'Quicksand', sans-serif); font-size: 24px; font-weight: 800; color: var(--main-blue); width: 100px; text-align: center; border: none; background: transparent; outline: none; border-bottom: 1px dashed var(--main-blue);">
+                </div>
+                <div
+                    style="background-color: rgba(23, 195, 178, 0.05); border: 1px solid rgba(23, 195, 178, 0.1); padding: 15px; border-radius: 16px; text-align: center;">
+                    <span
+                        style="font-size: 11px; color: var(--water-green); font-weight: 700; display: block; margin-bottom: 5px;">BONS
+                        ÉCHANGÉS</span>
+                    <input type="number" id="merchant-stat-vouchers" value="24"
+                        style="font-family: var(--font-title, 'Quicksand', sans-serif); font-size: 24px; font-weight: 800; color: var(--water-green); width: 80px; text-align: center; border: none; background: transparent; outline: none; border-bottom: 1px dashed var(--water-green);">
+                </div>
+                <div
+                    style="background-color: rgba(254, 109, 115, 0.05); border: 1px solid rgba(254, 109, 115, 0.1); padding: 15px; border-radius: 16px; text-align: center;">
+                    <span
+                        style="font-size: 11px; color: var(--coral); font-weight: 700; display: block; margin-bottom: 5px;">VISITES
+                        GÉNÉRÉES</span>
+                    <input type="number" id="merchant-stat-visits" value="56"
+                        style="font-family: var(--font-title, 'Quicksand', sans-serif); font-size: 24px; font-weight: 800; color: var(--coral); width: 80px; text-align: center; border: none; background: transparent; outline: none; border-bottom: 1px dashed var(--coral);">
+                </div>
+            </div>
+
+            <!-- Update stats button -->
+            <div style="text-align: right; margin-top: -15px; margin-bottom: 25px;">
+                <button type="button" class="btn-primary" onclick="updateMerchantStats()"
+                    style="padding: 6px 12px; font-size: 12px; border-radius: 8px;">Mettre à jour les
+                    indicateurs</button>
+            </div>
+
+            <!-- Double column details -->
+            <div class="points-verts-grid-2col"
+                style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 25px; text-align: left;">
+
+                <!-- Gestion des Offres Fidélité -->
+                <div>
+                    <h4 style="color: var(--main-blue); font-weight: 700; margin-bottom: 15px; font-size: 16px;">Vos
+                        offres Points Verts actives</h4>
+                    <div id="merchant-offers-list" style="display: flex; flex-direction: column; gap: 15px;">
+
+                        <!-- Offre 1 -->
+                        <div
+                            style="background-color: var(--cream); border: 1px solid rgba(0,0,0,0.04); padding: 15px; border-radius: 16px;">
+                            <div id="merchant-offer-display-1">
+                                <strong id="merchant-offer-title-1"
+                                    style="display: block; font-size: 13.5px; color: var(--main-blue);">Offre 1 : Une
+                                    viennoiserie offerte</strong>
+                                <span id="merchant-offer-desc-1"
+                                    style="font-size: 12px; color: #666; display: block; margin-top: 3px;">Coût : 50 pts
+                                    • Dès 5€ d'achat de pain</span>
+                            </div>
+                            <div id="merchant-offer-edit-1" style="display: none; margin-bottom: 8px;">
+                                <input type="text" id="edit-merchant-offer-title-1"
+                                    value="Offre 1 : Une viennoiserie offerte"
+                                    style="width: 100%; border: 1px solid rgba(0,0,0,0.1); padding: 5px 8px; border-radius: 6px; font-size: 12.5px; margin-bottom: 5px;">
+                                <input type="text" id="edit-merchant-offer-desc-1"
+                                    value="Coût : 50 pts • Dès 5€ d'achat de pain"
+                                    style="width: 100%; border: 1px solid rgba(0,0,0,0.1); padding: 5px 8px; border-radius: 6px; font-size: 12px;">
+                            </div>
+                            <div style="text-align: right; margin-top: 8px;">
+                                <button type="button" id="btn-merchant-offer-edit-1" class="btn-secondary-outline"
+                                    onclick="toggleMerchantOfferEdit(1)"
+                                    style="padding: 4px 10px; font-size: 11px; border-radius: 50px;">Modifier</button>
+                            </div>
+                        </div>
+
+                        <!-- Offre 2 -->
+                        <div
+                            style="background-color: var(--cream); border: 1px solid rgba(0,0,0,0.04); padding: 15px; border-radius: 16px;">
+                            <div id="merchant-offer-display-2">
+                                <strong id="merchant-offer-title-2"
+                                    style="display: block; font-size: 13.5px; color: var(--main-blue);">Offre 2 : Une
+                                    baguette tradition offerte</strong>
+                                <span id="merchant-offer-desc-2"
+                                    style="font-size: 12px; color: #666; display: block; margin-top: 3px;">Coût : 30 pts
+                                    • Sans minimum d'achat</span>
+                            </div>
+                            <div id="merchant-offer-edit-2" style="display: none; margin-bottom: 8px;">
+                                <input type="text" id="edit-merchant-offer-title-2"
+                                    value="Offre 2 : Une baguette tradition offerte"
+                                    style="width: 100%; border: 1px solid rgba(0,0,0,0.1); padding: 5px 8px; border-radius: 6px; font-size: 12.5px; margin-bottom: 5px;">
+                                <input type="text" id="edit-merchant-offer-desc-2"
+                                    value="Coût : 30 pts • Sans minimum d'achat"
+                                    style="width: 100%; border: 1px solid rgba(0,0,0,0.1); padding: 5px 8px; border-radius: 6px; font-size: 12px;">
+                            </div>
+                            <div style="text-align: right; margin-top: 8px;">
+                                <button type="button" id="btn-merchant-offer-edit-2" class="btn-secondary-outline"
+                                    onclick="toggleMerchantOfferEdit(2)"
+                                    style="padding: 4px 10px; font-size: 11px; border-radius: 50px;">Modifier</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div style="margin-top: 15px; text-align: center;">
+                        <button type="button" class="btn-mint" onclick="showCreateOfferForm()"
+                            style="padding: 8px 18px; font-size: 13px; border-radius: 8px; width: 100%; border: none; font-weight: 700; cursor: pointer;">+
+                            Proposer une offre</button>
+                    </div>
+
+                    <!-- Formulaire de création d'offre -->
+                    <div id="create-offer-form-container"
+                        style="display: none; margin-top: 15px; padding: 15px; background: rgba(23, 195, 178, 0.04); border: 1px dashed var(--water-green); border-radius: 16px;">
+                        <h5 style="color: var(--main-blue); font-weight: 700; margin-bottom: 12px; font-size: 14px;">
+                            Nouvelle offre Points Verts</h5>
+                        <div style="display: flex; flex-direction: column; gap: 10px; text-align: left;">
+                            <div>
+                                <label
+                                    style="font-size: 11px; color: #666; font-weight: 700; display: block; margin-bottom: 3px;">Type
+                                    de récompense</label>
+                                <select id="new-offer-type"
+                                    style="width: 100%; border: 1px solid rgba(0,0,0,0.1); padding: 6px; border-radius: 8px; font-size: 13px; background: white; outline: none;">
+                                    <option value="Bon d'achat">Bon d'achat</option>
+                                    <option value="Promotion">Réduction / Promo</option>
+                                    <option value="Cadeau">Produit / Cadeau offert</option>
+                                    <option value="Autre">Autre avantage</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label
+                                    style="font-size: 11px; color: #666; font-weight: 700; display: block; margin-bottom: 3px;">Titre
+                                    de l'offre</label>
+                                <input type="text" id="new-offer-title" placeholder="Ex: Café offert avec croissant"
+                                    style="width: 100%; border: 1px solid rgba(0,0,0,0.1); padding: 6px 10px; border-radius: 8px; font-size: 13px; outline: none;">
+                            </div>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                                <div>
+                                    <label
+                                        style="font-size: 11px; color: #666; font-weight: 700; display: block; margin-bottom: 3px;">Coût
+                                        en points</label>
+                                    <input type="number" id="new-offer-points" value="30"
+                                        style="width: 100%; border: 1px solid rgba(0,0,0,0.1); padding: 6px 10px; border-radius: 8px; font-size: 13px; outline: none;">
+                                </div>
+                                <div>
+                                    <label
+                                        style="font-size: 11px; color: #666; font-weight: 700; display: block; margin-bottom: 3px;">Conditions</label>
+                                    <input type="text" id="new-offer-conditions" placeholder="Ex: Dès 10€ d'achat"
+                                        style="width: 100%; border: 1px solid rgba(0,0,0,0.1); padding: 6px 10px; border-radius: 8px; font-size: 13px; outline: none;">
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 10px; margin-top: 10px;">
+                                <button type="button" class="btn-primary" onclick="submitNewOffer()"
+                                    style="flex: 1; padding: 8px; font-size: 12.5px; border-radius: 8px; border: none; cursor: pointer;">Enregistrer</button>
+                                <button type="button" class="btn-secondary-outline" onclick="cancelCreateOffer()"
+                                    style="padding: 8px; font-size: 12.5px; border-radius: 8px; cursor: pointer;">Annuler</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activité Récente (Scans parents) -->
+                <div>
+                    <h4 style="color: var(--main-blue); font-weight: 700; margin-bottom: 15px; font-size: 16px;">Scans
+                        récents de Points Verts</h4>
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+
+                        <!-- Transaction 1 -->
+                        <div
+                            style="background-color: var(--white); border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; font-size: 13px;">
+                            <div>
+                                <strong style="color: var(--main-blue);">Claire Martin</strong>
+                                <span style="font-size: 11px; color: #777; display: block;">1x Viennoiserie
+                                    offerte</span>
+                                <span style="font-size: 11px; color: #aaa; display: block; margin-top: 2px;">Il y a 5
+                                    min</span>
+                            </div>
+                            <span
+                                style="font-size: 11px; background-color: rgba(23, 195, 178, 0.1); color: var(--water-green); padding: 3px 8px; border-radius: 20px; font-weight: 700;">VALIDE</span>
+                        </div>
+
+                        <!-- Transaction 2 -->
+                        <div
+                            style="background-color: var(--white); border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; font-size: 13px;">
+                            <div>
+                                <strong style="color: var(--main-blue);">Marc Dupont</strong>
+                                <span style="font-size: 11px; color: #777; display: block;">1x Baguette tradition</span>
+                                <span style="font-size: 11px; color: #aaa; display: block; margin-top: 2px;">Il y a 2
+                                    heures</span>
+                            </div>
+                            <span
+                                style="font-size: 11px; background-color: rgba(23, 195, 178, 0.1); color: var(--water-green); padding: 3px 8px; border-radius: 20px; font-weight: 700;">VALIDE</span>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Footer -->
+            <div
+                style="margin-top: 30px; text-align: center; font-size: 12.5px; color: #666; border-top: 1px solid rgba(0,0,0,0.06); padding-top: 20px;">
+                Espace connecté avec le profil de démonstration Commerce local.
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal Espace Collectivités (Local Authority Showcase Dashboard) -->
+    <div id="authority-dashboard-modal" class="modal">
+        <div class="modal-content" style="max-width: 850px; width: 100%; border-radius: 24px; padding: 40px 30px;">
+            <span class="close-modal" onclick="closeAuthorityDashboardModal()">&times;</span>
+
+            <!-- Header -->
+            <div style="text-align: center; margin-bottom: 25px;">
+                <h3 id="authority-dash-title"
+                    style="font-family: var(--font-title, 'Quicksand', sans-serif); color: var(--main-blue); font-size: 26px; font-weight: 800;">
+                    Espace Collectivité — Ville de Castelnau-le-Lez</h3>
+                <p id="authority-dash-subtitle" style="color: #666; font-size: 14px; margin-top: 5px;">Suivi de la
+                    mobilité scolaire, de l'impact carbone et du commerce de proximité</p>
+            </div>
+
+            <!-- Statistiques Cards -->
+            <div class="points-verts-grid-2col"
+                style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 30px;">
+                <div
+                    style="background-color: rgba(34, 124, 157, 0.05); border: 1px solid rgba(34, 124, 157, 0.1); padding: 15px; border-radius: 16px; text-align: center;">
+                    <span
+                        style="font-size: 11px; color: var(--main-blue); font-weight: 700; display: block; margin-bottom: 5px;">FAMILLES
+                        ENGAGÉES</span>
+                    <input type="number" id="authority-stat-families" value="126"
+                        style="font-family: var(--font-title, 'Quicksand', sans-serif); font-size: 24px; font-weight: 800; color: var(--main-blue); width: 80px; text-align: center; border: none; background: transparent; outline: none; border-bottom: 1px dashed var(--main-blue);">
+                </div>
+                <div
+                    style="background-color: rgba(23, 195, 178, 0.05); border: 1px solid rgba(23, 195, 178, 0.1); padding: 15px; border-radius: 16px; text-align: center;">
+                    <span
+                        style="font-size: 11px; color: var(--water-green); font-weight: 700; display: block; margin-bottom: 5px;">ÉCOLES
+                        CONNECTÉES</span>
+                    <input type="number" id="authority-stat-schools" value="3"
+                        style="font-family: var(--font-title, 'Quicksand', sans-serif); font-size: 24px; font-weight: 800; color: var(--water-green); width: 80px; text-align: center; border: none; background: transparent; outline: none; border-bottom: 1px dashed var(--water-green);">
+                </div>
+                <div
+                    style="background-color: rgba(254, 109, 115, 0.05); border: 1px solid rgba(254, 109, 115, 0.1); padding: 15px; border-radius: 16px; text-align: center;">
+                    <span
+                        style="font-size: 11px; color: var(--coral); font-weight: 700; display: block; margin-bottom: 5px;">BUDGET
+                        DISPOSITIF</span>
+                    <div style="display: flex; align-items: baseline; justify-content: center;">
+                        <input type="number" id="authority-stat-budget" value="1200"
+                            style="font-family: var(--font-title, 'Quicksand', sans-serif); font-size: 24px; font-weight: 800; color: var(--coral); width: 80px; text-align: center; border: none; background: transparent; outline: none; border-bottom: 1px dashed var(--coral);">
+                        <span style="font-size: 14px; color: var(--coral); font-weight: 700;">€</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Update stats button -->
+            <div style="text-align: right; margin-top: -15px; margin-bottom: 25px;">
+                <button type="button" class="btn-primary" onclick="updateAuthorityStats()"
+                    style="padding: 6px 12px; font-size: 12px; border-radius: 8px;">Mettre à jour les données</button>
+            </div>
+
+            <!-- Double column details -->
+            <div class="points-verts-grid-2col"
+                style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 25px; text-align: left;">
+
+                <!-- Suivi des partenariats locaux -->
+                <div>
+                    <h4 style="color: var(--main-blue); font-weight: 700; margin-bottom: 15px; font-size: 16px;">Réseau
+                        local actif</h4>
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+
+                        <!-- Item 1 -->
+                        <div
+                            style="background-color: var(--cream); border: 1px solid rgba(0,0,0,0.04); padding: 12px 15px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; font-size: 13.5px;">
+                            <div>
+                                <strong style="color: var(--main-blue); display: block;">Écoles Raccordées</strong>
+                                <span style="font-size: 11.5px; color: #666;">Jules Ferry (84 fam.) • Notre-Dame (42
+                                    fam.)</span>
+                            </div>
+                            <span style="font-size: 12px; color: var(--water-green); font-weight: 700;">Actif</span>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div
+                            style="background-color: var(--cream); border: 1px solid rgba(0,0,0,0.04); padding: 12px 15px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; font-size: 13.5px;">
+                            <div>
+                                <strong style="color: var(--main-blue); display: block;">Commerces Engagés</strong>
+                                <span style="font-size: 11.5px; color: #666;">Boulangerie L'Épi d'Or • Boucherie du
+                                    Centre</span>
+                            </div>
+                            <span style="font-size: 12px; color: var(--water-green); font-weight: 700;">80 scans</span>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div
+                            style="background-color: var(--cream); border: 1px solid rgba(0,0,0,0.04); padding: 12px 15px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; font-size: 13.5px;">
+                            <div>
+                                <strong style="color: var(--main-blue); display: block;">Clubs Partenaires</strong>
+                                <span style="font-size: 11.5px; color: #666;">Castelnau Basket • Tennis Club</span>
+                            </div>
+                            <span style="font-size: 12px; color: var(--water-green); font-weight: 700;">Actif</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Suivi environnemental municipal -->
+                <div>
+                    <h4 style="color: var(--main-blue); font-weight: 700; margin-bottom: 15px; font-size: 16px;">Bilan
+                        environnemental</h4>
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+
+                        <div
+                            style="background-color: var(--white); border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 15px; text-align: center;">
+                            <span style="font-size: 12px; color: #666; display: block; margin-bottom: 5px;">CO₂ ÉVITÉ
+                                TOTAL</span>
+                            <strong
+                                style="font-family: var(--font-title, 'Quicksand', sans-serif); font-size: 26px; color: var(--coral);">2
+                                860 kg</strong>
+                        </div>
+
+                        <div
+                            style="background-color: var(--white); border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 15px; text-align: center;">
+                            <span style="font-size: 12px; color: #666; display: block; margin-bottom: 5px;">TRAJETS DE
+                                COVOITURAGE</span>
+                            <strong
+                                style="font-family: var(--font-title, 'Quicksand', sans-serif); font-size: 26px; color: var(--water-green);">1
+                                890</strong>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Footer -->
+            <div
+                style="margin-top: 30px; text-align: center; font-size: 12.5px; color: #666; border-top: 1px solid rgba(0,0,0,0.06); padding-top: 20px;">
+                Espace connecté avec le profil de démonstration Collectivité locale.
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal Article de Blog -->
+    <div id="blog-article-modal" class="modal">
+        <div class="modal-content"
+            style="max-width: 800px; padding: 0; overflow: hidden; border-radius: 24px; background: var(--white); box-shadow: 0 20px 50px rgba(0,0,0,0.15); border: none; position: relative;">
+            <span class="close-modal" onclick="closeBlogArticleModal()"
+                style="position: absolute; top: 15px; right: 20px; background: rgba(255,255,255,0.9); width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.15); z-index: 10; font-size: 24px; color: var(--main-blue); line-height: 1; font-weight: bold;">&times;</span>
+
+            <!-- Image d'illustration et entête -->
+            <div style="position: relative; height: 260px; width: 100%; overflow: hidden;">
+                <img id="blog-modal-img" src="" alt=""
+                    style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                <div
+                    style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.7));">
+                </div>
+                <div style="position: absolute; bottom: 20px; left: 30px; right: 30px; text-align: left;">
+                    <span id="blog-modal-category" class="blog-category"
+                        style="position: static; display: inline-block; margin-bottom: 8px; font-size: 11px; font-weight: 700; text-transform: uppercase; padding: 4px 12px; border-radius: 50px; color: white;">Catégorie</span>
+                    <h3 id="blog-modal-title"
+                        style="font-family: var(--font-title); color: white; font-size: 22px; font-weight: 800; margin: 0; line-height: 1.3;">
+                        Titre de l'article</h3>
+                </div>
+            </div>
+
+            <!-- Contenu de l'article -->
+            <div
+                style="padding: 30px; max-height: 55vh; overflow-y: auto; text-align: left; line-height: 1.7; color: #444; font-family: 'Open Sans', sans-serif;">
+                <div
+                    style="display: flex; gap: 20px; margin-bottom: 20px; font-size: 12px; color: #888; border-bottom: 1px solid rgba(0,0,0,0.06); padding-bottom: 12px; flex-wrap: wrap;">
+                    <span>📅 Publié le : <strong id="blog-modal-date" style="color: #555;">Date</strong></span>
+                    <span>⏱️ Lecture : <strong id="blog-modal-time" style="color: #555;">Temps</strong></span>
+                    <span>✍️ Auteur : <strong id="blog-modal-author" style="color: #555;">Auteur</strong></span>
+                </div>
+                <div id="blog-modal-body" style="font-size: 14.5px; color: #444;">
+                    <!-- Rempli dynamiquement -->
+                </div>
+            </div>
+
+            <!-- Footer du modal -->
+            <div
+                style="padding: 15px 30px; border-top: 1px solid rgba(0,0,0,0.06); display: flex; justify-content: space-between; align-items: center; background-color: var(--cream);">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <span style="font-size: 12.5px; font-weight: 700; color: var(--main-blue);">Partager cet article
+                        :</span>
+                    <a href="#" onclick="showToast('Lien copié dans le presse-papier !', 'success'); return false;"
+                        style="background: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: var(--main-blue); box-shadow: 0 2px 5px rgba(0,0,0,0.05); font-size: 14px;">🔗</a>
+                </div>
+                <button type="button" class="btn-primary" onclick="closeBlogArticleModal()"
+                    style="padding: 8px 20px; border-radius: 50px; font-size: 13px; font-weight: 700; border: none; cursor: pointer;">Fermer</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
