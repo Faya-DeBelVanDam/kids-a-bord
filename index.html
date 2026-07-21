@@ -776,7 +776,7 @@
                             <h3>Comment nous validons chaque profil parent</h3>
                             <p>Découvrez notre processus rigoureux de vérification pour garantir des trajets 100%
                                 sereins.</p>
-                            <a href="#" class="btn-text">Lire l'article &rarr;</a>
+                            <a href="#" class="btn-text" onclick="openBlogArticle(1); return false;">Lire l'article &rarr;</a>
                         </div>
                     </article>
 
@@ -790,7 +790,7 @@
                             <h3>Montpellier : le top 5 des activités extra-scolaires</h3>
                             <p>Du sport à la musique, découvrez les meilleurs clubs partenaires de Kids à bord dans
                                 l'Hérault.</p>
-                            <a href="#" class="btn-text">Lire l'article &rarr;</a>
+                            <a href="#" class="btn-text" onclick="openBlogArticle(2); return false;">Lire l'article &rarr;</a>
                         </div>
                     </article>
 
@@ -804,7 +804,7 @@
                             <h3>Réduire son empreinte carbone au quotidien</h3>
                             <p>Pourquoi le covoiturage scolaire est le premier geste éco-responsable des familles
                                 modernes.</p>
-                            <a href="#" class="btn-text">Lire l'article &rarr;</a>
+                            <a href="#" class="btn-text" onclick="openBlogArticle(3); return false;">Lire l'article &rarr;</a>
                         </div>
                     </article>
                 </div>
@@ -1148,11 +1148,11 @@
                 <form id="auth-login-form" class="auth-form-panel">
                     <div class="form-group">
                         <label for="login-email">Adresse email ou Identifiant</label>
-                        <input type="email" id="login-email" placeholder="votre@email.com" required>
+                        <input type="text" id="login-email" placeholder="votre@email.com" value="kids@bord" required>
                     </div>
                     <div class="form-group">
                         <label for="login-password">Mot de passe</label>
-                        <input type="password" id="login-password" placeholder="••••••••" required>
+                        <input type="password" id="login-password" placeholder="••••••••" value="kids@bord" required>
                     </div>
                     <div class="form-row-auth"
                         style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
@@ -2298,6 +2298,44 @@
                 Espace connecté avec le profil de démonstration Collectivité locale.
             </div>
 
+        </div>
+    </div>
+
+    <!-- Modal Article de Blog -->
+    <div id="blog-article-modal" class="modal">
+        <div class="modal-content" style="max-width: 800px; padding: 0; overflow: hidden; border-radius: 24px; background: var(--white); box-shadow: 0 20px 50px rgba(0,0,0,0.15); border: none; position: relative;">
+            <span class="close-modal" onclick="closeBlogArticleModal()" style="position: absolute; top: 15px; right: 20px; background: rgba(255,255,255,0.9); width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.15); z-index: 10; font-size: 24px; color: var(--main-blue); line-height: 1; font-weight: bold;">&times;</span>
+            
+            <!-- Image d'illustration et entête -->
+            <div style="position: relative; height: 260px; width: 100%; overflow: hidden;">
+                <img id="blog-modal-img" src="" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.7));"></div>
+                <div style="position: absolute; bottom: 20px; left: 30px; right: 30px; text-align: left;">
+                    <span id="blog-modal-category" class="blog-category" style="position: static; display: inline-block; margin-bottom: 8px; font-size: 11px; font-weight: 700; text-transform: uppercase; padding: 4px 12px; border-radius: 50px; color: white;">Catégorie</span>
+                    <h3 id="blog-modal-title" style="font-family: var(--font-title); color: white; font-size: 22px; font-weight: 800; margin: 0; line-height: 1.3;">Titre de l'article</h3>
+                </div>
+            </div>
+
+            <!-- Contenu de l'article -->
+            <div style="padding: 30px; max-height: 55vh; overflow-y: auto; text-align: left; line-height: 1.7; color: #444; font-family: 'Open Sans', sans-serif;">
+                <div style="display: flex; gap: 20px; margin-bottom: 20px; font-size: 12px; color: #888; border-bottom: 1px solid rgba(0,0,0,0.06); padding-bottom: 12px; flex-wrap: wrap;">
+                    <span>📅 Publié le : <strong id="blog-modal-date" style="color: #555;">Date</strong></span>
+                    <span>⏱️ Lecture : <strong id="blog-modal-time" style="color: #555;">Temps</strong></span>
+                    <span>✍️ Auteur : <strong id="blog-modal-author" style="color: #555;">Auteur</strong></span>
+                </div>
+                <div id="blog-modal-body" style="font-size: 14.5px; color: #444;">
+                    <!-- Rempli dynamiquement -->
+                </div>
+            </div>
+
+            <!-- Footer du modal -->
+            <div style="padding: 15px 30px; border-top: 1px solid rgba(0,0,0,0.06); display: flex; justify-content: space-between; align-items: center; background-color: var(--cream);">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <span style="font-size: 12.5px; font-weight: 700; color: var(--main-blue);">Partager cet article :</span>
+                    <a href="#" onclick="showToast('Lien copié dans le presse-papier !', 'success'); return false;" style="background: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: var(--main-blue); box-shadow: 0 2px 5px rgba(0,0,0,0.05); font-size: 14px;">🔗</a>
+                </div>
+                <button type="button" class="btn-primary" onclick="closeBlogArticleModal()" style="padding: 8px 20px; border-radius: 50px; font-size: 13px; font-weight: 700; border: none; cursor: pointer;">Fermer</button>
+            </div>
         </div>
     </div>
 
