@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Rétroplanning complet - Kids à bord</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: white; padding: 20px; font-family: 'Open Sans', sans-serif; color: #2c3e50; }
+        .capture-area { max-width: 1250px; margin: 0 auto; border: 1px solid #eee; padding: 35px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
+        h1 { font-family: 'Quicksand', sans-serif; color: #227c9d; text-align: center; margin-bottom: 20px; border-bottom: 3px solid #fe6d73; display: inline-block; padding-bottom: 8px; text-transform: none; }
+        
+        table { width: 100%; border-collapse: collapse; table-layout: fixed; margin-top: 10px; }
+        th, td { border: 1px solid #f2f2f2; padding: 8px 1px; font-size: 9px; text-align: center; position: relative; }
+        th { background-color: #f8f9fa; font-family: 'Quicksand', sans-serif; color: #227c9d; font-size: 8px; text-transform: uppercase; }
+        
+        .action-col { text-align: left; width: 240px; font-weight: 600; color: #444; background-color: #fff !important; padding-left: 10px; font-size: 10px; }
+        .phase-row { background-color: #f1f7f9; text-align: left; font-weight: bold; color: #227c9d; font-family: 'Quicksand', sans-serif; font-size: 11px; padding-left: 12px; border-top: 2px solid #e0e0e0; }
+
+        .school-cycle { height: 22px; font-weight: 700; font-size: 8px; display: flex; align-items: center; justify-content: center; border-radius: 3px; }
+        .open { background-color: #e8f5e9; color: #2e7d32; border: 1px solid #c8e6c9; }
+        .closed { background-color: #fafafa; color: #999; border: 1px solid #eee; }
+        .peak { background-color: #fff3e0; color: #ef6c00; border: 1px solid #ffe0b2; }
+
+        .bar { height: 12px; border-radius: 3px; margin: 0 auto; width: 95%; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .blue { background-color: #227c9d; }
+        .pink { background-color: #ff99cc; }
+        .orange { background-color: #ffcb77; }
+        .mint { background-color: #17c3b2; }
+        .coral { background-color: #fe6d73; }
+        .purple { background-color: #9b59b6; }
+        .cyan { background-color: #4dd0e1; }
+
+        .legend { margin-top: 20px; display: flex; justify-content: center; gap: 15px; font-size: 9px; flex-wrap: wrap; }
+        .legend-item { display: flex; align-items: center; gap: 4px; }
+        .dot { width: 8px; height: 8px; border-radius: 50%; }
+    </style>
+</head>
+<body>
+    <div class="capture-area">
+        <center><h1>Plan d'action annuel complet (janvier - décembre)</h1></center>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th class="action-col">Phases & actions détaillées</th>
+                    <th>Jan</th><th>Fév</th><th>Mar</th><th>Avr</th><th>Mai</th><th>Juin</th><th>Juil</th><th>Août</th><th>Sept</th><th>Oct</th><th>Nov</th><th>Déc</th>
+                </tr>
+                <tr>
+                    <td class="action-col">Périodes scolaires</td>
+                    <td><div class="school-cycle open">Cours</div></td>
+                    <td><div class="school-cycle open">Cours</div></td>
+                    <td><div class="school-cycle open">Cours</div></td>
+                    <td><div class="school-cycle open">Cours</div></td>
+                    <td><div class="school-cycle open">Cours</div></td>
+                    <td><div class="school-cycle open">Fin</div></td>
+                    <td><div class="school-cycle closed">Vac.</div></td>
+                    <td><div class="school-cycle closed">Vac.</div></td>
+                    <td><div class="school-cycle peak">Rentrée</div></td>
+                    <td><div class="school-cycle open">Cours</div></td>
+                    <td><div class="school-cycle open">Cours</div></td>
+                    <td><div class="school-cycle open">Noël</div></td>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Structure -->
+                <tr class="phase-row"><td colspan="13">1. Structure & administratif</td></tr>
+                <tr><td class="action-col">Dépôt de marque inpi & statuts</td><td><div class="bar blue"></div></td><td><div class="bar blue"></div></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td class="action-col">Ouverture compte pro & banque</td><td></td><td><div class="bar blue"></div></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td class="action-col">Négociation assurance sur-mesure</td><td></td><td></td><td><div class="bar orange"></div></td><td><div class="bar orange"></div></td><td><div class="bar orange"></div></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+
+                <!-- Site -->
+                <tr class="phase-row"><td colspan="13">2. Développement site (mvp)</td></tr>
+                <tr><td class="action-col">Cahier des charges fonctionnel</td><td></td><td></td><td><div class="bar pink"></div></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td class="action-col">Développement plateforme & gps</td><td></td><td></td><td></td><td><div class="bar pink"></div></td><td><div class="bar pink"></div></td><td><div class="bar pink"></div></td><td><div class="bar pink"></div></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td class="action-col">Tests & débuggage (période creuse)</td><td></td><td></td><td></td><td></td><td></td><td></td><td><div class="bar mint"></div></td><td><div class="bar mint"></div></td><td></td><td></td><td></td><td></td></tr>
+
+                <!-- Commercial -->
+                <tr class="phase-row"><td colspan="13">3. Commercial (écoles & clubs)</td></tr>
+                <tr><td class="action-col">Cartographie des établissements (mtp)</td><td><div class="bar blue"></div></td><td><div class="bar blue"></div></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td class="action-col">Prospection terrain (rdv directeurs)</td><td></td><td></td><td></td><td></td><td><div class="bar blue"></div></td><td><div class="bar blue"></div></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td class="action-col">Signature & livraison des kits ecole</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td><div class="bar orange"></div></td><td><div class="bar orange"></div></td><td></td><td></td><td></td></tr>
+
+                <!-- Marketing -->
+                <tr class="phase-row"><td colspan="13">4. Marketing & réseaux sociaux</td></tr>
+                <tr><td class="action-col">Création identité & visuels (interne)</td><td></td><td></td><td></td><td><div class="bar coral"></div></td><td><div class="bar coral"></div></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td class="action-col">Impression (flyers, macarons, kit)</td><td></td><td></td><td></td><td></td><td></td><td></td><td><div class="bar coral"></div></td><td><div class="bar coral"></div></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td class="action-col">Animation instagram / facebook</td><td></td><td></td><td></td><td></td><td><div class="bar coral"></div></td><td><div class="bar coral"></div></td><td><div class="bar coral"></div></td><td><div class="bar coral"></div></td><td><div class="bar coral"></div></td><td><div class="bar coral"></div></td><td><div class="bar coral"></div></td><td><div class="bar coral"></div></td></tr>
+                <tr><td class="action-col">Campagnes ads (acquisition parents)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td><div class="bar coral"></div></td><td><div class="bar coral"></div></td><td><div class="bar coral"></div></td><td></td></tr>
+
+                <!-- Lancement -->
+                <tr class="phase-row"><td colspan="13">5. Lancement & terrain</td></tr>
+                <tr><td class="action-col">Forums des associations (mtp)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td><div class="bar purple"></div></td><td></td><td></td><td></td></tr>
+                <tr><td class="action-col">Stands aux abords des écoles</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td><div class="bar purple"></div></td><td></td><td></td><td></td></tr>
+                <tr><td class="action-col">Validation des profils & trajets</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td><div class="bar cyan"></div></td><td><div class="bar cyan"></div></td><td></td><td></td></tr>
+
+                <!-- Vie du projet -->
+                <tr class="phase-row"><td colspan="13">6. Vie du projet & exploitation</td></tr>
+                <tr><td class="action-col">Démarrage des trajets réguliers</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td><div class="bar cyan"></div></td><td><div class="bar cyan"></div></td><td><div class="bar cyan"></div></td></tr>
+                <tr><td class="action-col">Suivi des points verts & partenaires</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td><div class="bar blue"></div></td><td><div class="bar blue"></div></td></tr>
+            </tbody>
+        </table>
+
+        <div class="legend">
+            <div class="legend-item"><div class="dot blue"></div> Structure</div>
+            <div class="legend-item"><div class="dot pink"></div> Tech</div>
+            <div class="legend-item"><div class="dot mint"></div> Tests</div>
+            <div class="legend-item"><div class="dot orange"></div> Commercial</div>
+            <div class="legend-item"><div class="dot coral"></div> Marketing</div>
+            <div class="legend-item"><div class="dot purple"></div> Lancement</div>
+            <div class="legend-item"><div class="dot cyan"></div> Opérations</div>
+        </div>
+    </div>
+</body>
+</html>
