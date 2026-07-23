@@ -84,6 +84,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('auth-login-form');
     const registerForm = document.getElementById('auth-register-form');
 
+    const initialEmail = document.getElementById('login-email');
+    const initialPassword = document.getElementById('login-password');
+    if (initialEmail) initialEmail.value = 'kids@bord';
+    if (initialPassword) initialPassword.value = 'kids@bord';
+
     // Steps
     const stepChoice = document.getElementById('modal-step-choice');
     const stepSuccess = document.getElementById('modal-step-success');
@@ -178,6 +183,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target === authorityDashboardContainer) {
             window.closeAuthorityDashboardModal();
         }
+        const blogArticleContainer = document.getElementById('blog-article-modal');
+        if (e.target === blogArticleContainer) {
+            window.closeBlogArticleModal();
+        }
     });
 
     // Modal width helper
@@ -242,6 +251,11 @@ document.addEventListener('DOMContentLoaded', () => {
             adjustModalWidth('default');
         }
 
+        const loginEmailInput = document.getElementById('login-email');
+        const loginPasswordInput = document.getElementById('login-password');
+        if (loginEmailInput) loginEmailInput.value = 'kids@bord';
+        if (loginPasswordInput) loginPasswordInput.value = 'kids@bord';
+
         switchAuthTab(tab);
     };
 
@@ -266,6 +280,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (tabRegister) tabRegister.classList.remove('active');
             if (loginFormEl) loginFormEl.style.display = 'block';
             if (registerFormEl) registerFormEl.style.display = 'none';
+
+            // Ensure credentials are prefilled on login tab display
+            const loginEmailInput = document.getElementById('login-email');
+            const loginPasswordInput = document.getElementById('login-password');
+            if (loginEmailInput) loginEmailInput.value = 'kids@bord';
+            if (loginPasswordInput) loginPasswordInput.value = 'kids@bord';
         } else {
             if (tabLogin) tabLogin.classList.remove('active');
             if (tabRegister) tabRegister.classList.add('active');
@@ -578,8 +598,8 @@ window.openPartnerAuthModal = (event, partnerType, tab) => {
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
 
-        // Custom referrer to hide back button
-        window.openClassicAuth(partnerType, tab);
+        // Custom referrer to hide back button - always force 'login' tab for demo pre-fill
+        window.openClassicAuth(partnerType, 'login');
 
         // Access states inside the DOM scope
         const backBtn = document.getElementById('auth-back-btn');
@@ -1207,5 +1227,113 @@ document.addEventListener("DOMContentLoaded", () => {
 
 window.celebrateMontpellier = () => {
     showToast("☀️ Bienvenue à Montpellier ! C'est ici que l'aventure Kids à bord a commencé.", "success");
+};
+
+// --- Blog Articles Database & Modal Handlers ---
+const blogArticles = {
+    1: {
+        title: "Comment nous validons chaque profil parent pour un covoiturage scolaire 100% sécurisé",
+        category: "Sécurité",
+        categoryClass: "cat-blue",
+        date: "17 Juillet 2026",
+        time: "4 min",
+        author: "Sophie Laurent, Responsable Sécurité",
+        img: "blog_security.png",
+        content: `
+            <p style="margin-top: 0; font-size: 15px; line-height: 1.8; color: #444;">La sécurité est le pilier fondateur de <strong>Kids à bord</strong>. Pour offrir aux parents une tranquillité d'esprit absolue lors des trajets de covoiturage scolaire ou extra-scolaire, nous avons développé une charte de confiance stricte et un protocole de vérification rigoureux de chaque utilisateur.</p>
+            
+            <h4 style="color: var(--main-blue); margin: 24px 0 12px; font-family: var(--font-title); font-weight: 700; font-size: 17px;">1. La vérification d'identité systématique</h4>
+            <p style="font-size: 15px; line-height: 1.8; color: #444;">Chaque parent qui s'inscrit sur la plateforme Kids à bord doit fournir des justificatifs d'identité officiels. Notre équipe vérifie manuellement la conformité des pièces d'identité (carte d'identité nationale ou passeport) pour écarter tout profil suspect. Cette étape essentielle garantit que chaque membre de la communauté est clairement identifié.</p>
+            
+            <h4 style="color: var(--main-blue); margin: 24px 0 12px; font-family: var(--font-title); font-weight: 700; font-size: 17px;">2. Validation du permis de conduire et de l'assurance automobile</h4>
+            <p style="font-size: 15px; line-height: 1.8; color: #444;">Conduire les enfants des autres implique une responsabilité immense. C'est pourquoi nous exigeons de chaque parent pilote la transmission de son permis de conduire en cours de validité ainsi qu'une attestation d'assurance auto à jour. Nous nous assurons que les garanties couvrent bien le transport de passagers à titre gratuit (le covoiturage).</p>
+            
+            <h4 style="color: var(--main-blue); margin: 24px 0 12px; font-family: var(--font-title); font-weight: 700; font-size: 17px;">3. La liaison avec l'établissement scolaire (Code Établissement)</h4>
+            <p style="font-size: 15px; line-height: 1.8; color: #444;">Pour qu'un parent puisse rejoindre la communauté de covoiturage d'une école spécifique, il doit saisir un code d'invitation unique fourni directement par la direction de l'école ou du club. Ce système de cloisonnement garantit que seuls les parents d'élèves réellement inscrits dans l'établissement peuvent se voir et organiser des trajets ensemble.</p>
+            
+            <h4 style="color: var(--main-blue); margin: 24px 0 12px; font-family: var(--font-title); font-weight: 700; font-size: 17px;">4. Le système de double validation du transfert (Code QR sécurisé)</h4>
+            <p style="font-size: 15px; line-height: 1.8; color: #444;">Lorsqu'un enfant monte ou descend du véhicule, un système de scan de QR Code ou de confirmation en un clic sur le téléphone du parent pilote et du parent accompagnateur notifie immédiatement les familles en temps réel. Le suivi GPS permet de savoir exactement où en est le trajet.</p>
+            <p style="font-size: 15px; line-height: 1.8; color: #444; margin-bottom: 0;">Avec ces dispositifs, Kids à bord propose une alternative sûre et solidaire à la voiture individuelle devant les grilles des écoles françaises.</p>
+        `
+    },
+    2: {
+        title: "Montpellier : le top 5 des activités extra-scolaires et comment s'y rendre facilement",
+        category: "Vie Locale",
+        categoryClass: "cat-mint",
+        date: "12 Juillet 2026",
+        time: "5 min",
+        author: "Marc Bertrand, Coordinateur Communauté Hérault",
+        img: "blog_montpellier.png",
+        content: `
+            <p style="margin-top: 0; font-size: 15px; line-height: 1.8; color: #444;">La rentrée scolaire est souvent synonyme de casse-tête pour l'organisation des activités extra-scolaires des enfants. À Montpellier et ses communes limitrophes (Castelnau-le-Lez, Lattes, Saint-Jean-de-Védas), l'offre culturelle et sportive est foisonnante. Voici notre sélection des 5 meilleures activités locales et nos solutions pour simplifier les transports grâce au covoiturage solidaire.</p>
+            
+            <h4 style="color: var(--main-blue); margin: 24px 0 12px; font-family: var(--font-title); font-weight: 700; font-size: 17px;">1. Le MUC Football et Omnisports</h4>
+            <p style="font-size: 15px; line-height: 1.8; color: #444;">Institution montpelliéraine, le Montpellier Université Club propose des dizaines de disciplines sportives pour les jeunes de tous âges. Avec des entraînements répartis sur plusieurs complexes de la métropole, les trajets hebdomadaires peuvent vite saturer l'agenda des parents.</p>
+            
+            <h4 style="color: var(--main-blue); margin: 24px 0 12px; font-family: var(--font-title); font-weight: 700; font-size: 17px;">2. Les ateliers d'art de la Panacée (MO.CO)</h4>
+            <p style="font-size: 15px; line-height: 1.8; color: #444;">Pour éveiller la créativité de vos enfants, le centre d'art contemporain de Montpellier propose des ateliers d'arts plastiques stimulants. Situé en centre-ville, l'accès en voiture individuelle y est restreint, rendant le covoiturage ou le relais avec les transports en commun montpelliérains indispensable.</p>
+            
+            <h4 style="color: var(--main-blue); margin: 24px 0 12px; font-family: var(--font-title); font-weight: 700; font-size: 17px;">3. L'école de musique de Castelnau-le-Lez</h4>
+            <p style="font-size: 15px; line-height: 1.8; color: #444;">Proposant des cours d'éveil musical, de piano ou de guitare, cette structure accueille des centaines de jeunes musiciens chaque semaine après la classe.</p>
+            
+            <h4 style="color: var(--main-blue); margin: 24px 0 12px; font-family: var(--font-title); font-weight: 700; font-size: 17px;">4. Le Montpellier Athletic Club (Athlétisme au stade Philippidès)</h4>
+            <p style="font-size: 15px; line-height: 1.8; color: #444;">Pour les passionnés de course, de saut et de lancer, le stade Philippidès est le lieu de rendez-vous incontournable. Les entraînements du mercredi après-midi réunissent énormément d'enfants de différentes écoles.</p>
+            
+            <h4 style="color: var(--main-blue); margin: 24px 0 12px; font-family: var(--font-title); font-weight: 700; font-size: 17px;">5. Les clubs de voile à Carnon et Palavas</h4>
+            <p style="font-size: 15px; line-height: 1.8; color: #444;">Dès le printemps, les activités nautiques attirent les jeunes Montpelliérains vers le littoral. Les trajets vers les ports de Carnon et de Palavas-les-Flots se prêtent particulièrement bien à l'organisation de lignes de covoiturage Kids à bord entre voisins de quartier.</p>
+            <p style="font-size: 15px; line-height: 1.8; color: #444; margin-bottom: 0;"><strong>Comment s'y rendre sans stress ?</strong> En utilisant Kids à bord, vous pouvez vous regrouper entre parents d'un même club ou d'une même école pour alterner les trajets du mercredi et du samedi.</p>
+        `
+    },
+    3: {
+        title: "Réduire son empreinte carbone au quotidien grâce au covoiturage scolaire",
+        category: "Écologie",
+        categoryClass: "cat-yellow",
+        date: "05 Juillet 2026",
+        time: "3 min",
+        author: "Léa Roussel, Consultante Éco-mobilité",
+        img: "blog_eco.png",
+        content: `
+            <p style="margin-top: 0; font-size: 15px; line-height: 1.8; color: #444;">Le transport routier est la première source d'émissions de gaz à effet de serre en France. Parmi ces déplacements, les trajets domicile-école représentent une part considérable du trafic matinal dans nos agglomérations. Le covoiturage scolaire s'impose aujourd'hui comme une solution simple, immédiate et efficace pour engager les familles dans la transition écologique.</p>
+            
+            <h4 style="color: var(--main-blue); margin: 24px 0 12px; font-family: var(--font-title); font-weight: 700; font-size: 17px;">1. Un levier d'action immédiat contre le surencombrement des écoles</h4>
+            <p style="font-size: 15px; line-height: 1.8; color: #444;">Le saviez-vous ? Plus de 60% des enfants sont déposés en voiture individuelle devant leur école, souvent pour des distances inférieures à 3 kilomètres. En regroupant 3 ou 4 enfants dans un même véhicule avec Kids à bord, nous divisons instantanément par trois le nombre de voitures en circulation aux heures de pointe devant les établissements scolaires.</p>
+            
+            <h4 style="color: var(--main-blue); margin: 24px 0 12px; font-family: var(--font-title); font-weight: 700; font-size: 17px;">2. Un bilan carbone drastiquement allégé pour la collectivité</h4>
+            <p style="font-size: 15px; line-height: 1.8; color: #444;">En moyenne, une famille adepte du covoiturage scolaire avec Kids à bord économise plus de 250 kg de CO₂ par an. Multiplié à l'échelle d'une école de 300 élèves, c'est plus de 15 tonnes de CO₂ évitées chaque année ! Cela contribue directement aux objectifs de neutralité carbone des communes et des métropoles engagées pour le climat.</p>
+            
+            <h4 style="color: var(--main-blue); margin: 24px 0 12px; font-family: var(--font-title); font-weight: 700; font-size: 17px;">3. Améliorer la qualité de l'air autour de nos enfants</h4>
+            <p style="font-size: 15px; line-height: 1.8; color: #444;">La concentration de gaz d'échappement aux abords directs des écoles représente un risque majeur pour la santé respiratoire des écoliers. Moins de véhicules à l'arrêt moteur tournant signifie un air plus pur et un environnement sonore apaisé propice à l'apprentissage.</p>
+            <p style="font-size: 15px; line-height: 1.8; color: #444; margin-bottom: 0;">En adoptant le réflexe Kids à bord, les parents font bien plus que s'entraider : ils éduquent la jeune génération aux mobilités douces et collectives de demain.</p>
+        `
+    }
+};
+
+window.openBlogArticle = (id) => {
+    const article = blogArticles[id];
+    if (!article) return;
+
+    document.getElementById('blog-modal-img').src = article.img;
+    document.getElementById('blog-modal-img').alt = article.title;
+    document.getElementById('blog-modal-title').innerText = article.title;
+    document.getElementById('blog-modal-date').innerText = article.date;
+    document.getElementById('blog-modal-time').innerText = article.time;
+    document.getElementById('blog-modal-author').innerText = article.author;
+    document.getElementById('blog-modal-body').innerHTML = article.content;
+
+    const catSpan = document.getElementById('blog-modal-category');
+    catSpan.innerText = article.category;
+    catSpan.className = `blog-category ${article.categoryClass}`;
+
+    const modal = document.getElementById('blog-article-modal');
+    if (modal) {
+        modal.classList.add('active');
+    }
+};
+
+window.closeBlogArticleModal = () => {
+    const modal = document.getElementById('blog-article-modal');
+    if (modal) {
+        modal.classList.remove('active');
+    }
 };
 
