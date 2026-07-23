@@ -361,7 +361,7 @@
                                         </ul>
                                     </div>
                                     <a href="#" class="pricing-btn btn-outline"
-                                        onclick="openPartnerAuthModal(event, 'merchant', 'register')">Essayer sans
+                                        onclick="openPartnerAuthModal(event, 'merchant', 'login')">Essayer sans
                                         engagement</a>
                                 </div>
 
@@ -385,7 +385,7 @@
                                         </ul>
                                     </div>
                                     <a href="#" class="pricing-btn btn-solid"
-                                        onclick="openPartnerAuthModal(event, 'merchant', 'register')">Choisir l'offre
+                                        onclick="openPartnerAuthModal(event, 'merchant', 'login')">Choisir l'offre
                                         Boost
                                         Local</a>
                                 </div>
@@ -414,7 +414,7 @@
                                         </ul>
                                     </div>
                                     <a href="#" class="pricing-btn btn-outline"
-                                        onclick="openPartnerAuthModal(event, 'club', 'register')">Essayer sans
+                                        onclick="openPartnerAuthModal(event, 'club', 'login')">Essayer sans
                                         engagement</a>
                                 </div>
 
@@ -438,7 +438,7 @@
                                         </ul>
                                     </div>
                                     <a href="#" class="pricing-btn btn-solid"
-                                        onclick="openPartnerAuthModal(event, 'club', 'register')">Choisir l'offre
+                                        onclick="openPartnerAuthModal(event, 'club', 'login')">Choisir l'offre
                                         annuelle</a>
                                 </div>
                             </div>
@@ -466,7 +466,7 @@
                                         </ul>
                                     </div>
                                     <a href="#" class="pricing-btn btn-outline"
-                                        onclick="openPartnerAuthModal(event, 'school', 'register')">Essayer sans
+                                        onclick="openPartnerAuthModal(event, 'school', 'login')">Essayer sans
                                         engagement</a>
                                 </div>
 
@@ -490,7 +490,7 @@
                                         </ul>
                                     </div>
                                     <a href="#" class="pricing-btn btn-solid"
-                                        onclick="openPartnerAuthModal(event, 'school', 'register')">Choisir l'offre
+                                        onclick="openPartnerAuthModal(event, 'school', 'login')">Choisir l'offre
                                         annuelle</a>
                                 </div>
                             </div>
@@ -510,7 +510,7 @@
                                 </p>
                                 <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
                                     <a href="#" class="btn-coral"
-                                        onclick="openPartnerAuthModal(event, 'other', 'register')"
+                                        onclick="openPartnerAuthModal(event, 'other', 'login')"
                                         style="padding: 12px 30px; font-weight: 700; border-radius: 50px;">Créer un
                                         compte</a>
                                     <a href="#contact" class="btn-primary"
@@ -584,7 +584,7 @@
                         </li>
                     </ul>
 
-                    <!-- Bloc Charte de Ponctualité (Strategic Pivot LAB #3) -->
+                    <!-- Bloc Charte de Ponctualité (Strategic Pivot LAB #s3) -->
                     <div class="punctuality-charter-box">
                         <div class="charter-header">
                             <h4>La charte de ponctualité</h4>
@@ -776,7 +776,8 @@
                             <h3>Comment nous validons chaque profil parent</h3>
                             <p>Découvrez notre processus rigoureux de vérification pour garantir des trajets 100%
                                 sereins.</p>
-                            <a href="#" class="btn-text" onclick="openBlogArticle(1); return false;">Lire l'article &rarr;</a>
+                            <a href="#" class="btn-text" onclick="openBlogArticle(1); return false;">Lire l'article
+                                &rarr;</a>
                         </div>
                     </article>
 
@@ -790,7 +791,8 @@
                             <h3>Montpellier : le top 5 des activités extra-scolaires</h3>
                             <p>Du sport à la musique, découvrez les meilleurs clubs partenaires de Kids à bord dans
                                 l'Hérault.</p>
-                            <a href="#" class="btn-text" onclick="openBlogArticle(2); return false;">Lire l'article &rarr;</a>
+                            <a href="#" class="btn-text" onclick="openBlogArticle(2); return false;">Lire l'article
+                                &rarr;</a>
                         </div>
                     </article>
 
@@ -804,7 +806,8 @@
                             <h3>Réduire son empreinte carbone au quotidien</h3>
                             <p>Pourquoi le covoiturage scolaire est le premier geste éco-responsable des familles
                                 modernes.</p>
-                            <a href="#" class="btn-text" onclick="openBlogArticle(3); return false;">Lire l'article &rarr;</a>
+                            <a href="#" class="btn-text" onclick="openBlogArticle(3); return false;">Lire l'article
+                                &rarr;</a>
                         </div>
                     </article>
                 </div>
@@ -2303,22 +2306,32 @@
 
     <!-- Modal Article de Blog -->
     <div id="blog-article-modal" class="modal">
-        <div class="modal-content" style="max-width: 800px; padding: 0; overflow: hidden; border-radius: 24px; background: var(--white); box-shadow: 0 20px 50px rgba(0,0,0,0.15); border: none; position: relative;">
-            <span class="close-modal" onclick="closeBlogArticleModal()" style="position: absolute; top: 15px; right: 20px; background: rgba(255,255,255,0.9); width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.15); z-index: 10; font-size: 24px; color: var(--main-blue); line-height: 1; font-weight: bold;">&times;</span>
-            
+        <div class="modal-content"
+            style="max-width: 800px; padding: 0; overflow: hidden; border-radius: 24px; background: var(--white); box-shadow: 0 20px 50px rgba(0,0,0,0.15); border: none; position: relative;">
+            <span class="close-modal" onclick="closeBlogArticleModal()"
+                style="position: absolute; top: 15px; right: 20px; background: rgba(255,255,255,0.9); width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.15); z-index: 10; font-size: 24px; color: var(--main-blue); line-height: 1; font-weight: bold;">&times;</span>
+
             <!-- Image d'illustration et entête -->
             <div style="position: relative; height: 260px; width: 100%; overflow: hidden;">
-                <img id="blog-modal-img" src="" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-                <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.7));"></div>
+                <img id="blog-modal-img" src="" alt=""
+                    style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                <div
+                    style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.7));">
+                </div>
                 <div style="position: absolute; bottom: 20px; left: 30px; right: 30px; text-align: left;">
-                    <span id="blog-modal-category" class="blog-category" style="position: static; display: inline-block; margin-bottom: 8px; font-size: 11px; font-weight: 700; text-transform: uppercase; padding: 4px 12px; border-radius: 50px; color: white;">Catégorie</span>
-                    <h3 id="blog-modal-title" style="font-family: var(--font-title); color: white; font-size: 22px; font-weight: 800; margin: 0; line-height: 1.3;">Titre de l'article</h3>
+                    <span id="blog-modal-category" class="blog-category"
+                        style="position: static; display: inline-block; margin-bottom: 8px; font-size: 11px; font-weight: 700; text-transform: uppercase; padding: 4px 12px; border-radius: 50px; color: white;">Catégorie</span>
+                    <h3 id="blog-modal-title"
+                        style="font-family: var(--font-title); color: white; font-size: 22px; font-weight: 800; margin: 0; line-height: 1.3;">
+                        Titre de l'article</h3>
                 </div>
             </div>
 
             <!-- Contenu de l'article -->
-            <div style="padding: 30px; max-height: 55vh; overflow-y: auto; text-align: left; line-height: 1.7; color: #444; font-family: 'Open Sans', sans-serif;">
-                <div style="display: flex; gap: 20px; margin-bottom: 20px; font-size: 12px; color: #888; border-bottom: 1px solid rgba(0,0,0,0.06); padding-bottom: 12px; flex-wrap: wrap;">
+            <div
+                style="padding: 30px; max-height: 55vh; overflow-y: auto; text-align: left; line-height: 1.7; color: #444; font-family: 'Open Sans', sans-serif;">
+                <div
+                    style="display: flex; gap: 20px; margin-bottom: 20px; font-size: 12px; color: #888; border-bottom: 1px solid rgba(0,0,0,0.06); padding-bottom: 12px; flex-wrap: wrap;">
                     <span>📅 Publié le : <strong id="blog-modal-date" style="color: #555;">Date</strong></span>
                     <span>⏱️ Lecture : <strong id="blog-modal-time" style="color: #555;">Temps</strong></span>
                     <span>✍️ Auteur : <strong id="blog-modal-author" style="color: #555;">Auteur</strong></span>
@@ -2329,12 +2342,16 @@
             </div>
 
             <!-- Footer du modal -->
-            <div style="padding: 15px 30px; border-top: 1px solid rgba(0,0,0,0.06); display: flex; justify-content: space-between; align-items: center; background-color: var(--cream);">
+            <div
+                style="padding: 15px 30px; border-top: 1px solid rgba(0,0,0,0.06); display: flex; justify-content: space-between; align-items: center; background-color: var(--cream);">
                 <div style="display: flex; align-items: center; gap: 8px;">
-                    <span style="font-size: 12.5px; font-weight: 700; color: var(--main-blue);">Partager cet article :</span>
-                    <a href="#" onclick="showToast('Lien copié dans le presse-papier !', 'success'); return false;" style="background: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: var(--main-blue); box-shadow: 0 2px 5px rgba(0,0,0,0.05); font-size: 14px;">🔗</a>
+                    <span style="font-size: 12.5px; font-weight: 700; color: var(--main-blue);">Partager cet article
+                        :</span>
+                    <a href="#" onclick="showToast('Lien copié dans le presse-papier !', 'success'); return false;"
+                        style="background: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: var(--main-blue); box-shadow: 0 2px 5px rgba(0,0,0,0.05); font-size: 14px;">🔗</a>
                 </div>
-                <button type="button" class="btn-primary" onclick="closeBlogArticleModal()" style="padding: 8px 20px; border-radius: 50px; font-size: 13px; font-weight: 700; border: none; cursor: pointer;">Fermer</button>
+                <button type="button" class="btn-primary" onclick="closeBlogArticleModal()"
+                    style="padding: 8px 20px; border-radius: 50px; font-size: 13px; font-weight: 700; border: none; cursor: pointer;">Fermer</button>
             </div>
         </div>
     </div>
